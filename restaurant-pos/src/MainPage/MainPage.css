@@ -1,4 +1,4 @@
-* {
+html {
     background-color: rgb(235, 235, 235);
 }
 #Backtohome {
@@ -69,9 +69,10 @@
 }
 
 #FoodComponent {
-    background-color: white;
+        
     margin: 10px 20px 10px 20px;
     width: 250px;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
 }
