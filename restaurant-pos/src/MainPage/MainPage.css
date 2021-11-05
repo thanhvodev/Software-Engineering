@@ -133,3 +133,19 @@ html {
     cursor: pointer;
     padding: 0;
 }
+
+.btn-secondary {
+    margin-top: 10px;
+    height: 50%;
+    width: 100px;
+}
+.cart {
+    height: 100vh;
+    line-height: 30px;
+    background: rgb(208, 236, 233);
+    color: #fff;
+    position: fixed;
+    width: 30%;
+    top: 0px;
+    left: 0px;
+}

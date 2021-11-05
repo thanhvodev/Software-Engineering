@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -31,7 +30,7 @@ const Modalinfo = ({ isShowing, hide, srcImg, name, price }) => {
                 <hr />
                 <div className="container h-100">
                     <div className="row h-100">
-                        <div className="col-3"><img src={srcImg} className="img-thumbnail" /> </div>
+                        <div className="col-3"><img src={srcImg} className="img-thumbnail" alt="item" /> </div>
                         <div className="col-9 d-flex flex-column justify-content-between">
                             <p>Name: {name} </p>
                             <hr />
