@@ -83,6 +83,8 @@ html {
 
 #foodrow {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #foodimage {
@@ -107,9 +109,10 @@ html {
 }
 
 #price-and-cart {
-    height: 35px;
+    height: 70px;
     padding-left: 10px;
     display: flex;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -122,8 +125,11 @@ html {
 }
 
 #price-and-cart #cartIcon {
-    position: absolute;
+    width: 52x;
+    height: 53px;
+    margin-right: 10px;
     bottom: 10px;
     right: 1px;
     cursor: pointer;
+    padding: 0;
 }
