@@ -4,6 +4,7 @@ import Modal from "./Modalinfo";
 import useModal from './useModal';
 
 function FoodComponent({
+    id,
     srcImg,
     stt,
     name,
@@ -15,6 +16,7 @@ function FoodComponent({
             <Modal
                 isShowing={isShowing}
                 hide={toggle}
+                id={id}
                 srcImg={srcImg}
                 name={name}
                 price={price}

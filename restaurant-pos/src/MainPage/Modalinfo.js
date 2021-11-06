@@ -15,7 +15,16 @@ const customStyles = {
     }
 };
 
-const Modalinfo = ({ isShowing, hide, srcImg, name, price }) => {
+const addCart = (id, name, srtImg, quantity, price) => {
+    if (quantity === 0) {
+      document.cookie = id + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    }
+    else {
+      document.cookie = id + '=' + name + ',' + srtImg + ',' + quantity + ',' + price;
+    }
+  }
+
+const Modalinfo = ({ isShowing, hide, id, srcImg, name, price }) => {
     return (
         <div>
             <Modal
@@ -38,7 +47,8 @@ const Modalinfo = ({ isShowing, hide, srcImg, name, price }) => {
                             <p>Additives: </p>
                             <p>Baking materials: </p>
                             <p>Food decoration: </p>
-                            <button type="button" class="btn btn-danger w-100">{price}</button>
+                            <button type="button" class="btn btn-danger w-100"
+                                onClick={() => { addCart(id,name,srcImg,1,price);hide()}}>{price}</button>
                         </div>
                     </div>
                 </div>
