@@ -14,6 +14,7 @@ const CartInfo = () => {
 
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
+  ca.sort();
 
   let rs = [];
 
@@ -24,7 +25,10 @@ const CartInfo = () => {
     if (ca[i] === '') break;
     let y = ca[i].split('=');
     let x = y[1].split(',');
-    sum += parseInt(x[3])*parseInt(x[2]);
+
+    let prc = parseInt(x[3])*parseInt(x[2]);
+    sum += prc;
+    
     rs.push(
       <div className="row">
         <div className="col-3">
@@ -51,7 +55,7 @@ const CartInfo = () => {
                 }}> +</button>
             </div>
             <div className="col-7 text-end">
-              <p className="text-danger">{x[3]}</p>
+              <p className="text-danger">{prc+".000 VND"}</p>
             </div>
           </div>
         </div>
