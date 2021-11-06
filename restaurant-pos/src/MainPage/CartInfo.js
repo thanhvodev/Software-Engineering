@@ -1,3 +1,4 @@
+import { func } from 'prop-types';
 import { useState } from 'react';
 
 const addCart = (id, name, srtImg, quantity, price) => {
@@ -14,7 +15,7 @@ const CartInfo = () => {
 
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
-  ca.sort();
+  ca.sort(function(a,b){return a.split('=')[0]-b.split('=')[0]});
 
   let rs = [];
 
@@ -26,8 +27,9 @@ const CartInfo = () => {
     let y = ca[i].split('=');
     let x = y[1].split(',');
 
-    let prc = parseInt(x[3])*parseInt(x[2]);
+    let prc = parseInt(x[3].replace('.',''))*parseInt(x[2].replace('.',''));
     sum += prc;
+    prc = prc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND'
     
     rs.push(
       <div className="row">
@@ -55,7 +57,7 @@ const CartInfo = () => {
                 }}> +</button>
             </div>
             <div className="col-7 text-end">
-              <p className="text-danger">{prc+".000 VND"}</p>
+              <p className="text-danger">{prc}</p>
             </div>
           </div>
         </div>
@@ -63,13 +65,15 @@ const CartInfo = () => {
     )
   }
 
+  sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND'
+
   rs.push(
     <div>
       <hr className="mb-4" style={{ height: '5px' }} />
 
     <div className="d-flex justify-content-between px-x">
       <p className="fw-bold">Total:</p>
-      <p className="fw-bold">{sum+'.000 VND'}</p>
+      <p className="fw-bold">{sum}</p>
     </div>
       <div className="d-flex justify-content-between p-2 mb-2">
       <button type="button" class="btn btn-danger w-100">Payment</button>
