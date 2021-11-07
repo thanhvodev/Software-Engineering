@@ -5,7 +5,7 @@ import CartInfo from './CartInfo';
 const CartElement = ({ hide }) => {
   return (
     <div className="container cart overflow-auto">
-      <div className="sticky-top" style={{backgroundColor: 'rgb(208, 236, 233)'}}>
+      <div className="sticky-top">
       <div className="row">
         <div className="col-4 mt-2">
           <img src={cart} alt='cart icon' width='25px' height='25px' />

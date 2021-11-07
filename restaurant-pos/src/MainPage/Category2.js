@@ -14,12 +14,12 @@ function Category2() {
   return (
     <div id="Category2" className='category'>
       <p className='title-name'>Cupcake</p>
-      <Scrollbars style={{width: 1500, height: 500}}>
+      <Scrollbars style={{width: 1500, height: 600}}>
       <div id='foodrow'>
         <FoodComponent id='9' srcImg={chocolate} stt='1.' name='Chocolate Cupcake' price='30.000 VND' />
         <FoodComponent id='10' srcImg={dragqueen} stt='2.' name='Drag Queen Cupcake' price='30.000 VND' />
         <FoodComponent id='11' srcImg={loukoumades} stt='3.' name='Loukoumades Cupcake' price='30.000 VND' />
-        <FoodComponent id='12' srcImg={love} stt='4.' name='Love Shake Freakshake Cupcake' price='30.000 VND' />
+        <FoodComponent id='12' srcImg={love} stt='4.' name='Love Shake Cupcake' price='30.000 VND' />
         <FoodComponent id='13' srcImg={redvelvet} stt='5.' name='Red Velvet Cupcake' price='30.000 VND' />
         <FoodComponent id='14' srcImg={single} stt='6.' name='Single Perfect Cupcake' price='30.000 VND' />
         <FoodComponent id='15' srcImg={strawberry} stt='7.' name='Strawberry Mango Margarhita Cupcake' price='30.000 VND' />

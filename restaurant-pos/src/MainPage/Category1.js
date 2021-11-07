@@ -15,6 +15,7 @@ function Category1() {
     <div id="Category1" className='category'>
       <p className='title-name'>Gas Drinks</p>
       <Scrollbars style={{width: 1500, height: 500}}>
+      <div id='abcd'>
       <div id='foodrow'>
         <FoodComponent id='1' srcImg={coca} stt='1.' name='CoCa-Cola' price='15.000 VND' />
         <FoodComponent id='2' srcImg={cocazero} stt='2.' name='CoCa-Cola Zero' price='15.000 VND' />
@@ -24,6 +25,7 @@ function Category1() {
         <FoodComponent id='6' srcImg={PEPSI} stt='6.' name='Pepsi' price='15.000 VND' />
         <FoodComponent id='7' srcImg={REDBULL} stt='7.' name='Redbull' price='15.000 VND' />
         <FoodComponent id='8' srcImg={SPRITE} stt='8.' name='Sprite' price='15.000 VND' /> 
+      </div>
       </div>
       </Scrollbars>
     </div>

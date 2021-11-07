@@ -1,6 +1,11 @@
 html {
     background-color: rgb(235, 235, 235);
 }
+
+#MainPage {
+    text-align: center;
+}
+
 #Backtohome {
     display: flex;
     margin-top: 0px;
@@ -49,12 +54,13 @@ html {
 
 #maincontent {
     background-color: rgb(235, 235, 235);
-    text-align: center;
+    display: grid;
+    place-content: center;
 }
 
 .category {
     text-align: center;
-    display: inline-block;
+    display: block;
 }
 
 .title-name {
@@ -81,12 +87,10 @@ html {
     box-shadow: 3px 3px 5px purple;
 }
 
-
-
 #foodrow {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 2%;
+    margin-left: 1.5%;
 }
 
 #foodimage {
@@ -148,7 +152,7 @@ html {
 .cart {
     height: 100vh;
     line-height: 30px;
-    background: rgb(208, 236, 233);
+    background: #65beb1;
     color: #fff;
     position: fixed;
     width: 30%;
