@@ -21,7 +21,7 @@ function FoodComponent({
                 name={name}
                 price={price}
             />
-            <img id='foodimage' src={srcImg} alt='Food' width='200px' height='200px' />
+            <img id='foodimage' src={srcImg} alt='Food' width='auto' height='200px' />
             <p id='foodname'>
                 <span id='foodstt'>{stt}</span>
                 <span> </span>
