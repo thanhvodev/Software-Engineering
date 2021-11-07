@@ -102,6 +102,7 @@ html {
     font-size: 20px;
     padding-left: 10px;
     padding-bottom: 3px;
+    margin-bottom: 7px;
     border-bottom: 1px solid #C8C0C0;
 }
 
@@ -111,7 +112,7 @@ html {
 }
 
 #price-and-cart {
-    height: 70px;
+    height: 40px;
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
@@ -122,18 +123,21 @@ html {
     font-size: 17px;
     font-weight: bold;
     font-style: italic;
+    padding-top: 3px;
     color: red;
-    padding-top: 5px;
 }
 
 #price-and-cart #cartIcon {
-    width: 52x;
-    height: 53px;
-    margin-right: 10px;
-    bottom: 10px;
-    right: 1px;
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
     cursor: pointer;
     padding: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#price-and-cart #cartIcon:hover {
+    transform: scale(1.1);
 }
 
 .btn-secondary {
@@ -150,4 +154,5 @@ html {
     width: 30%;
     top: 0px;
     left: 0px;
+    
 }

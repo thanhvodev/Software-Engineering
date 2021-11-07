@@ -6,7 +6,7 @@ const Cart = ({ isShowing, hide }) => {
     return (
         <div style={{ display: isShowing ? "block" : "none" }} >
             <CartElement hide={hide} />
-        </div >
+        </div>
     );
 }
 

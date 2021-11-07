@@ -30,7 +30,7 @@ function FoodComponent({
 
             <div id='price-and-cart'>
                 <p id='foodprice'>{price}</p>
-                <button id='cartIcon' onClick={toggle}><img src={cart} alt='Cart Icon' width='50px' height='50px' /></button>
+                <img id='cartIcon' onClick={toggle} src={cart} alt='Cart Icon' width='40px' height='40px' />
             </div>
 
         </div>
