@@ -11,6 +11,8 @@ import cart from '../img/cart.svg'
 import './MainPage.css'
 import useCart from './useCart';
 import Cart from '../MainPage/Cart'
+import register from "../MainPage/register"
+import { Link } from "react-router-dom"
 
 function MainPage() {
     const { isShowing, toggle } = useCart(false);
@@ -25,6 +27,7 @@ function MainPage() {
                                     <div id='Backtohome' className="col-10">
                                         <img id='home' src={home} alt='Home Icon' width='50px' height='50px' />
                                         <p>Back to Home</p>
+                                        <Link to="/register" style={{ marginLeft: "50px", marginTop:"15px" }}><button>Register</button></Link>
                                     </div>
                                     <button type="button" className="btn btn-secondary col-2" onClick={toggle}><img src={cart} alt='cart icon' width='25px' height='25px' /></button>
                                 </div>
@@ -40,6 +43,7 @@ function MainPage() {
                                 </Switch>
                             </div>
                         </div>
+                        <Route path="/register" component={register} />
                     </Router>
                 </div>
                 <div>
