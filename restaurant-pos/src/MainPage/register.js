@@ -1,7 +1,7 @@
-import React from 'react';
-import { Container, Form, Row, Col,Button } from "react-bootstrap"
+import React from "react";
+import { Container, Form, Row, Col, Button } from "react-bootstrap";
 
-function register() {
+function Register() {
     return (
         <Container>
             <Row className="justify-content-md-center">
@@ -39,7 +39,11 @@ function register() {
                             ></Form.Control>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" style={{marginTop:"10px"}}>
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            style={{ marginTop: "10px" }}
+                        >
                             Submit
                         </Button>
                     </Form>
@@ -49,4 +53,4 @@ function register() {
     );
 }
 
-export default register;
+export default Register;
