@@ -4,8 +4,7 @@ import home from "../img/home.png";
 import cart from "../img/cart.svg";
 import "./MainPage.css";
 import useCart from "./useCart";
-import Cart from "../MainPage/Cart";
-import Register from "../MainPage/register";
+import Cart from "./Cart";
 import { Link } from "react-router-dom";
 
 function MainPage() {
