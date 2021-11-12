@@ -116,8 +116,10 @@ html {
 .menu .category #foodrow {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-left: 1vw;
+    justify-content: start;
+    text-align:center;
+    padding-left: 4%;
+    width: 100vw;
 }
 
 .menu #foodimage {
