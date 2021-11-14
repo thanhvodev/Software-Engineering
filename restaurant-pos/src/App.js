@@ -11,7 +11,7 @@ import Category6 from "./MainPage/Category6";
 import { UserContext } from "./components/UserContext";
 
 function App() {
-    const [user, setUser] = useState("Bạn!");
+    const [user, setUser] = useState("Bạn");
     const value = useMemo(() => ({ user, setUser }), [user, setUser]);
     return (
         <div className="App">
