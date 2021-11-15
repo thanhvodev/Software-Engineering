@@ -22,14 +22,16 @@ function Login(props) {
     };
 
     const checkAcc = () => {
-        useracc.forEach(checkExist);
+        if (useracc.filter(isExist).length !== 0) {
+            alert("Đăng nhập thành công");
+            setUser(username);
+        } else {
+            alert("Tài khoản hoặc mật khẩu không đúng!");
+        }
     }
 
-    function checkExist(value, index, array) {
-        if (value.username == username && value.password == password) {
-            alert("Login successfully");
-            setUser(username);
-        }
+    function isExist(value) {
+        return value.username === username && value.password === password;
     }
 
     useEffect(() => {

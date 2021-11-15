@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import firebase from "../components/firebase";
 import { Link } from "react-router-dom";
 
@@ -7,6 +7,20 @@ function Register() {
     const [username, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [useracc, setUseracc] = useState();
+
+    useEffect(() => {
+        const accRef = firebase.database().ref('Accounts');
+        accRef.on('value', (snapshot) => {
+            const accs = snapshot.val();
+            const accList = [];
+            for (let id in accs) {
+                accList.push({ id, ...accs[id] });
+            }
+            setUseracc(accList);
+        });
+    }, []);
 
     const handleOnChangeName = (e) => {
         setName(e.target.value);
@@ -20,16 +34,27 @@ function Register() {
         setPassword(e.target.value);
     };
 
+    function isExist(value) {
+        return value.username === username;
+    }
+
     const createAccount = () => {
         const accRef = firebase.database().ref('Accounts');
         const acc = {
             username,
             email,
-            password
+            password,
+            dispoint: 0,
+            phistory: '',
+            isOnline: false,
         };
-        accRef.push(acc);
-        alert("Đăng kí thành công");
 
+        if (useracc.filter(isExist).length === 0) {
+            accRef.push(acc);
+            alert("Đăng kí thành công");
+        } else {
+            alert("Tên đăng nhập đã tồn tại!");
+        }
     };
 
     return (

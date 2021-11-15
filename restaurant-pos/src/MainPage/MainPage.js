@@ -1,10 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Navtest from "./Nav-test";
 import home from "../img/home.png";
 import cart from "../img/cart.svg";
 import "./MainPage.css";
 import useCart from "./useCart";
-import Cart from "./Cart";
+
+import Cart from "../MainPage/Cart";
+
 import { Link } from "react-router-dom";
 import { UserContext } from "../components/UserContext";
 
