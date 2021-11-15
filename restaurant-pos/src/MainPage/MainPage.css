@@ -91,7 +91,7 @@ html {
     font-style: italic;
     color: rgb(93, 97, 107);
     text-align: left;
-    margin-left: 30px;
+    padding-left: 30px;
     border-top: 1px solid #c8c0c0;
     border-bottom: 1px solid #c8c0c0;
 }
@@ -122,15 +122,15 @@ html {
     width: 100vw;
 }
 
-#foodimage {
+.menu #foodimage {
     cursor: pointer;
 }
 
-#carticon {
+.menu #carticon {
     cursor: pointer;
 }
 
-#foodname {
+.menu #foodname {
     text-align: left;
     font-size: 20px;
     padding-left: 10px;
@@ -139,28 +139,27 @@ html {
     border-bottom: 1px solid #c8c0c0;
 }
 
-#foodname #foodstt {
+.menu #foodname #foodstt {
     color: red;
     font-weight: bold;
 }
 
-#price-and-cart {
+.menu #price-and-cart {
     height: 40px;
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
     position: relative;
 }
-
-#price-and-cart #foodprice {
+.menu #price-and-cart #foodprice {
     font-size: 17px;
     font-weight: bold;
     font-style: italic;
     padding-top: 3px;
-    color: red;
+    color: rgb(255, 0, 0);
 }
 
-#price-and-cart #cartIcon {
+.menu #price-and-cart #cartIcon {
     position: absolute;
     bottom: 4px;
     right: 5px;
@@ -169,7 +168,7 @@ html {
     transition: all 0.2s ease-in-out;
 }
 
-#price-and-cart #cartIcon:hover {
+.menu #price-and-cart #cartIcon:hover {
     transform: scale(1.1);
 }
 
@@ -184,14 +183,38 @@ html {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.MainPage .cart-modal {
+    position: fixed;
+    display: block;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.MainPage .cart-modal .cart-modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .MainPage .cart {
     height: 100vh;
     line-height: 30px;
-    background: #65beb1;
+    background: #7bb6ee;
     color: #fff;
     position: fixed;
     width: 30%;
     top: 0px;
-    left: 0px;
-    z-index: 1;
+    right: 0px;
+    padding-top: 20px;
+    animation: cart-appear ease-out 0.3s;
+}
+
+@keyframes cart-appear {
+    from {
+        right: -30%;
+    }
 }
