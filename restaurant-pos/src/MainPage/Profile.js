@@ -9,18 +9,18 @@ function Profile({ history }) {
     : "";
   const id = localStorage.getItem("id")
     ? JSON.parse(localStorage.getItem("id"))
-        : "";
-    const email_form_local = localStorage.getItem("email")
-        ? JSON.parse(localStorage.getItem("email"))
-        : "";
-    const point = localStorage.getItem("point")
-        ? JSON.parse(localStorage.getItem("point"))
-        : "";
-    const [username, setUsername] = useState(username_from_local);
-    const [email, setEmail] = useState(email_form_local);
+    : "";
+  const email_form_local = localStorage.getItem("email")
+    ? JSON.parse(localStorage.getItem("email"))
+    : "";
+  const point = localStorage.getItem("point")
+    ? JSON.parse(localStorage.getItem("point"))
+    : "";
+  const [username, setUsername] = useState(username_from_local);
+  const [email, setEmail] = useState(email_form_local);
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
-  
+
   useEffect(() => {
     if (username_from_local === "") {
       history.push("/login");
@@ -33,13 +33,13 @@ function Profile({ history }) {
     } else {
       const user = firebase.database().ref("Accounts").child(id);
       user.update({
-        username:username,
-          password: password,
-        email:email
+        username: username,
+        password: password,
+        email: email
       })
       alert("You have successfully updated your information");
-        history.push('/')
-        localStorage.setItem("email", JSON.stringify(email))
+      history.push('/')
+      localStorage.setItem("email", JSON.stringify(email))
     }
   };
   return (
@@ -52,30 +52,30 @@ function Profile({ history }) {
         </div>
         <div style={{ fontSize: "2rem", marginLeft: "2rem" }}>User Profile</div>
         <div>
-                  <div class="inp">
-                      <span style={{color:"red"}}>Email</span>
-                      <input
-                          value={email}
-                          class="impBx"
-                          type="text"
-                          onChange={(e) => setEmail(e.target.value)}
+          <div class="inp">
+            <span style={{ color: "red" }}>Email</span>
+            <input
+              value={email}
+              class="impBx"
+              type="text"
+              onChange={(e) => setEmail(e.target.value)}
 
-                          style={{ color: "purple", width:"50%" }}
-                   
-                      ></input>
-                  </div>
-                  <div class="inp">
-                      <span>Point</span>
-                      <input
-                          value={point}
-                          class="impBx"
-                          type="text"
-                          disabled
-                      ></input>
-                  </div>
+              style={{ color: "purple", width: "50%" }}
+
+            ></input>
+          </div>
+          <div class="inp">
+            <span>Point</span>
+            <input
+              value={point}
+              class="impBx"
+              type="text"
+              disabled
+            ></input>
+          </div>
 
 
-                  <div class="form">
+          <div class="form">
             <div class="inp">
               <span>Username</span>
               <input
@@ -87,7 +87,7 @@ function Profile({ history }) {
             </div>
 
             <div class="inp">
-              <span>Password</span>
+              <span>Update Password</span>
               <input
                 value={password}
                 class="impBx"
@@ -96,7 +96,7 @@ function Profile({ history }) {
               ></input>
             </div>
             <div class="inp">
-              <span>Confirm Password</span>
+              <span>Confirm Update Password</span>
               <input
                 class="impBx"
                 type="password"
@@ -107,7 +107,7 @@ function Profile({ history }) {
             <div class="btn-box">
               <button type="submit" class="toggle-btn1">
                 Update Profile
-                         </button>
+              </button>
             </div>
           </div>
         </div>
