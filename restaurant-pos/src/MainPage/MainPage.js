@@ -1,16 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Navtest from "./Nav-test";
 import home from "../img/home.png";
 import cart from "../img/cart.svg";
 import "./MainPage.css";
 import useCart from "./useCart";
-import Cart from "./Cart";
+import Cart from "../MainPage/Cart";
 import { Link } from "react-router-dom";
 import { UserContext } from "../components/UserContext";
 
 function MainPage() {
   const { isShowing, toggle } = useCart(false);
-  const { user, setUser } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext); // sai
+    const username_from_local = localStorage.getItem("username")
+        ? JSON.parse(localStorage.getItem("username"))
+        : "";
 
   return (
     <div className="menu">
@@ -35,7 +38,10 @@ function MainPage() {
                 </Link>
                 <Link to="/profile" className="btn btn-3 col-1">
                   <h5>Profile</h5>
-                </Link>
+                              </Link>
+                              {username_from_local ? <Link to="/datban" className="btn btn-3 col-1">
+                                  <h5>Dat ban</h5>
+                              </Link>:""}
 
                 {user === "Bạn" ? (
                   <Link to="/login" className="btn btn-3 col-1">
@@ -46,8 +52,10 @@ function MainPage() {
                     onClick={() => {
                       setUser("Bạn");
                       localStorage.removeItem("username");
-                      localStorage.removeItem("id")
-                    }}
+                                              localStorage.removeItem("id");
+                                              localStorage.removeItem("point");
+                                              localStorage.removeItem("email")
+                                          }}
                     className="btn btn-3 col-1"
                   >
                     Log Out

@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\components",
     "\\src\\img",
     "\\src\\MainPage"
   ],
-  "SelectedNode": "\\src\\MainPage\\register.js",
   "PreviewInSolutionExplorer": false
 }

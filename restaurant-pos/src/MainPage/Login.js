@@ -20,10 +20,11 @@ function Login(props) {
   const handleOnChangePassword = (e) => {
     setPassword(e.target.value);
   };
-
+/*
   const checkAcc = () => {
     useracc.forEach(checkExist);
   };
+
 
   function checkExist(value, index, array) {
     console.log(value);
@@ -48,6 +49,40 @@ function Login(props) {
       console.log(accList[0].id)
     });
   }, []);
+*/
+    const checkAcc = () => {
+        if (useracc.filter(isExist).length !== 0) {
+            alert("Đăng nhập thành công");
+            setUser(username);
+
+            
+        } else {
+            alert("Tài khoản hoặc mật khẩu không đúng!");
+        }
+    }
+
+    function isExist(value) {
+        if (value.username === username && value.password === password) {
+            localStorage.setItem("username", JSON.stringify(username));
+            localStorage.setItem("id", JSON.stringify(value.id));
+            localStorage.setItem("email", JSON.stringify(value.email));
+            localStorage.setItem("point", JSON.stringify(value.dispoint));
+            return true;
+        }
+        return false;
+    }
+
+    useEffect(() => {
+        const accRef = firebase.database().ref('Accounts');
+        accRef.on('value', (snapshot) => {
+            const accs = snapshot.val();
+            const accList = [];
+            for (let id in accs) {
+                accList.push({ id, ...accs[id] });
+            }
+            setUseracc(accList);
+        });
+    }, []);
 
   return (
     <div className="Loginpage">
