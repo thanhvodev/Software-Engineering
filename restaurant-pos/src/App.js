@@ -9,8 +9,10 @@ import Category3 from "./MainPage/Category3";
 import Category5 from "./MainPage/Category5";
 import Category6 from "./MainPage/Category6";
 import { UserContext } from "./components/UserContext";
+import Profile from "./MainPage/Profile";
 
 function App() {
+
     const [user, setUser] = useState("Bạn");
     const value = useMemo(() => ({ user, setUser }), [user, setUser]);
     return (
@@ -26,6 +28,7 @@ function App() {
                         <Route path="/category3" exact component={Category3} />
                         <Route path="/category5" exact component={Category5} />
                         <Route path="/category6" exact component={Category6} />
+                        <Route path="/profile" exact component={Profile} />
                     </UserContext.Provider>
                 </Switch>
             </Router>
