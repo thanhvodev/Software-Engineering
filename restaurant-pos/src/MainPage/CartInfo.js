@@ -1,3 +1,6 @@
+import React, { useContext, useEffect } from "react";
+import { UserContext } from "../components/UserContext";
+import firebase from "../components/firebase";
 import { func } from 'prop-types';
 import { useState } from 'react';
 
@@ -10,8 +13,21 @@ const addCart = (id, name, srtImg, quantity, price) => {
     }
 }
 
+
 const CartInfo = () => {
+
+    const id = localStorage.getItem("id")
+        ? JSON.parse(localStorage.getItem("id"))
+        : "";
+
+    const point = localStorage.getItem("point")
+        ? JSON.parse(localStorage.getItem("point"))
+        : "";
+
+
+    const { user, setUser } = useContext(UserContext);
     const [isChange, setIsChange] = useState(false);
+    const [isDis, setIsDis] = useState(false);
 
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');
@@ -65,7 +81,13 @@ const CartInfo = () => {
         )
     }
 
-    sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND'
+    const numsum = sum;
+    const numsumString = numsum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
+    const numsumDis = sum * 0.95;
+    const numsumDisString = numsumDis.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
+
+    sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
+
 
     rs.push(
         <div>
@@ -73,10 +95,25 @@ const CartInfo = () => {
 
             <div className="d-flex justify-content-between px-x">
                 <p className="fw-bold">Total:</p>
-                <p className="fw-bold">{sum}</p>
+                <p className="fw-bold">{!isDis ? numsumString : numsumDisString}</p>
             </div>
+            <input id="discount" type="checkbox" onClick={() => { setIsDis(!isDis); }} />
+            <label for="discount">Dùng 5000 điểm để giảm 5.000đ?</label>
+
             <div className="d-flex justify-content-between p-2 mb-2">
-                <button type="button" class="btn btn-danger w-100">Payment</button>
+                <button type="button" class="btn btn-danger w-100" onClick={async () => {
+                    if (user) {
+                        await setUser({ ...user, discount: user.discount + numsum * 0.05 });
+                        const userd = firebase.database().ref("Accounts").child(id);
+                        userd.update({
+                            dispoint: point + numsum * 0.05,
+                        });
+
+                        localStorage.setItem("point", point + numsum * 0.05);
+                    } else if (!user && isDis) {
+                        alert("Only user can use discount!");
+                    }
+                }}>Payment</button>
             </div>
         </div>
     )

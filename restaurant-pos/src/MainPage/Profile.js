@@ -1,9 +1,12 @@
 import firebase from "./../components/firebase";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../components/UserContext";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 function Profile({ history }) {
+
+  const { user, setUser } = useContext(UserContext);
+
   const username_from_local = localStorage.getItem("username")
     ? JSON.parse(localStorage.getItem("username"))
     : "";
@@ -31,8 +34,8 @@ function Profile({ history }) {
     if (password !== confirm) {
       alert("Your password is not correct");
     } else {
-      const user = firebase.database().ref("Accounts").child(id);
-      user.update({
+      const userd = firebase.database().ref("Accounts").child(id);
+      userd.update({
         username: username,
         password: password,
         email: email
@@ -67,7 +70,7 @@ function Profile({ history }) {
           <div class="inp">
             <span>Point</span>
             <input
-              value={point}
+              value={user ? user.discount : point}
               class="impBx"
               type="text"
               disabled
