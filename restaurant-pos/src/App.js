@@ -13,7 +13,7 @@ import Profile from "./MainPage/Profile";
 
 function App() {
 
-    const [user, setUser] = useState("Bạn");
+    const [user, setUser] = useState(null);
     const value = useMemo(() => ({ user, setUser }), [user, setUser]);
     return (
         <div className="App">

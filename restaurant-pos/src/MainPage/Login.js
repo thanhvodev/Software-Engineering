@@ -7,9 +7,23 @@ import { UserContext } from "../components/UserContext";
 import Profile from "./Profile";
 
 function Login(props) {
-  const { user, setUser } = useContext(UserContext);
 
   const [useracc, setUseracc] = useState();
+
+  useEffect(() => {
+    const accRef = firebase.database().ref('Accounts');
+    accRef.on('value', (snapshot) => {
+      const accs = snapshot.val();
+      const accList = [];
+      for (let id in accs) {
+        accList.push({ id, ...accs[id] });
+      }
+      setUseracc(accList);
+    });
+  }, []);
+
+  const { user, setUser } = useContext(UserContext);
+
   const [username, setName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,69 +34,29 @@ function Login(props) {
   const handleOnChangePassword = (e) => {
     setPassword(e.target.value);
   };
-/*
+
   const checkAcc = () => {
-    useracc.forEach(checkExist);
-  };
-
-
-  function checkExist(value, index, array) {
-    console.log(value);
-    if (value.username == username && value.password == password) {
-      alert("Login successfully");
-      setUser(username);
-      localStorage.setItem("username", JSON.stringify(username));
-      localStorage.setItem("id", JSON.stringify(value.id));
+    if (useracc.filter(isExist).length !== 0) {
+      alert("Đăng nhập thành công");
+    } else {
+      alert("Tài khoản hoặc mật khẩu không đúng!");
     }
   }
 
-  useEffect(() => {
-    const accRef = firebase.database().ref("Accounts");
-    accRef.on("value", (snapshot) => {
-      const accs = snapshot.val();
-      const accList = [];
-      for (let id in accs) {
-        accList.push({ id, ...accs[id] });
-      }
-      setUseracc(accList);
-      console.log(accList);
-      console.log(accList[0].id)
-    });
-  }, []);
-*/
-    const checkAcc = () => {
-        if (useracc.filter(isExist).length !== 0) {
-            alert("Đăng nhập thành công");
-            setUser(username);
-
-            
-        } else {
-            alert("Tài khoản hoặc mật khẩu không đúng!");
-        }
+  function isExist(value) {
+    if (value.username === username && value.password === password) {
+      localStorage.setItem("username", JSON.stringify(username));
+      localStorage.setItem("id", JSON.stringify(value.id));
+      localStorage.setItem("email", JSON.stringify(value.email));
+      localStorage.setItem("point", JSON.stringify(value.dispoint));
+      const user = { name: username, discount: value.dispoint };
+      setUser(user);
+      return true;
     }
+    return false;
+  }
 
-    function isExist(value) {
-        if (value.username === username && value.password === password) {
-            localStorage.setItem("username", JSON.stringify(username));
-            localStorage.setItem("id", JSON.stringify(value.id));
-            localStorage.setItem("email", JSON.stringify(value.email));
-            localStorage.setItem("point", JSON.stringify(value.dispoint));
-            return true;
-        }
-        return false;
-    }
 
-    useEffect(() => {
-        const accRef = firebase.database().ref('Accounts');
-        accRef.on('value', (snapshot) => {
-            const accs = snapshot.val();
-            const accList = [];
-            for (let id in accs) {
-                accList.push({ id, ...accs[id] });
-            }
-            setUseracc(accList);
-        });
-    }, []);
 
   return (
     <div className="Loginpage">
