@@ -1,0 +1,55 @@
+.reservationDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reservationDetails table {
+    width: 100%;
+    font-size: large;
+    border-spacing: 10px;
+    margin-top: 10px;
+    margin-top: 10px;
+}
+
+.reservationDetails table th {
+    width: 30%;
+    text-align: left;    
+    border-bottom: 2px solid rgba(192, 192, 192, 0.5);
+}
+
+.reservationDetails table td {
+    border-bottom: 2px solid rgba(192, 192, 192, 0.5);
+}
+
+.terms {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.terms #terms_conditions{
+    font-size: larger;
+}
+
+.button #backButton span:after {
+    content: '\226a';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+  
+.button #backButton:hover span {
+    padding-left: 25px;
+}
+  
+.button #backButton:hover span:after {
+    opacity: 1;
+    top: 0;
+}

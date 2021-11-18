@@ -1,0 +1,296 @@
+body {
+    background: url("../img/TableReservation/background.png") no-repeat center fixed;
+    background-size: cover;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.reservation {
+    box-sizing: border-box;
+    font-family: Cambria;
+    margin: 0 8px 0px 8px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#reservationHeading, #webIntro {
+    width: 30vw;
+    padding: 10px;
+    background-color: azure;
+    border: 2px solid #2c3e50;
+    border-radius: 10px 0 10px 0;
+}
+
+#reservationHeading {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+#webIntro {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px){
+    #reservationHeading, #webIntro {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #2c3e50;
+        border-radius: 10px 0 10px 0;
+    }
+}
+
+.reservationMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20% 0 20%;
+    background-color: azure;
+    border: 2px solid #2c3e50;
+    border-radius: 10px;
+}
+
+.restaurantInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.restaurantLogo {
+    flex-grow: 2;
+}
+
+.restaurantName {
+    flex-grow: 8;
+}
+
+.restaurantName p {
+    text-align: center;
+    font-size: xx-large;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.restaurantLogo img {
+    width: 50px;
+    height: 50px;
+}
+
+.restaurantInfo:hover {
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.2);
+}
+
+.tableInfo {
+    position: relative;
+    width: 90%;    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tableInfo label {
+    font-size: larger;
+}
+
+.tableInfo #reservatePartySize, #reservateDate, #reservateTime {
+    font-size: larger;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid maroon;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.tableInfo #reservatePartySize:hover, #reservateDate:hover, #reservateTime:hover {
+    box-shadow: 0 5px 35px 0px rgba(128,0,0,.2);
+}
+
+.table {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.table label {
+    font-size: larger;
+}
+
+.table .tableList {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid maroon;
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tableItem {
+    transition: 1s all;
+}
+
+.tableItem figcaption {
+    text-align: center;
+}
+
+.tableList:hover .tableItem {
+    filter: blur(1px);
+    opacity: .5;
+    transform: scale(.98);
+    box-shadow: none;
+}
+
+.tableList:hover .tableItem:hover {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+    box-shadow: 0 8px 20px 0px rgba(0,0,0,0.25);
+    border-radius: 20px;
+}
+
+.table img {
+    width: 100px;
+    height: auto;
+}
+
+.memberInfo {
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.memberInfo .name, .contact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.memberInfo .comment {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.memberInfo #lastName, #firstName, #mobileNumber, #email {
+    width: 100%;
+}
+
+.memberInfo #lastName, #firstName, #mobileNumber, #email, #comment {
+    border: 2px solid maroon;
+    border-radius: 8px 8px 8px 8px;    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.memberInfo #lastName:hover, #firstName:hover, #mobileNumber:hover, #email:hover, #comment:hover {
+    box-shadow: 0 5px 35px 0px rgba(128,0,0,.5);
+}
+
+.navigationButton {
+    display: flex;
+    margin: 0 20% 0 20%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    height: fit-content;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.button button {
+    border: none;
+    border-radius: 8px;
+    background-color: maroon;
+    color: white;
+    font-size: large;
+    height: 40px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button button span {
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button #searchButton span:after {
+    content: '\2315';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.button #searchButton:hover span {
+    padding-right: 25px;
+}
+  
+.button #searchButton:hover span:after {
+    opacity: 1;
+}
+
+.button #nextButton span:after {
+    content: '\226b';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.button #nextButton:hover span {
+    padding-right: 25px;
+}
+  
+.button #nextButton:hover span:after {
+    opacity: 1;
+    top: 0;
+}
+
+.button #backHomeButton span:after {
+    content: '\2302';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+  
+.button #backHomeButton:hover span {
+    padding-left: 25px;
+}
+  
+.button #backHomeButton:hover span:after {
+    opacity: 1;
+    left: 0;
+    top: 0;
+}

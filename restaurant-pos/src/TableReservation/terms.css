@@ -1,0 +1,34 @@
+.reservationTerms {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reservationTerms #termsHeader {    
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+.reservationTerms #terms_conditions {    
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+.button #continueButton span:after {
+    content: '\226b';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.button #continueButton:hover span {
+    padding-right: 25px;
+}
+  
+.button #continueButton:hover span:after {
+    opacity: 1;
+    top: 0;
+    right: 0;
+}
