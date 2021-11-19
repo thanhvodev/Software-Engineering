@@ -106,7 +106,7 @@ const CartInfo = () => {
                         await setUser({ ...user, discount: point + numsum * 0.05 });
                         localStorage.setItem("point", JSON.stringify(point + numsum * 0.05))
                         const userd = firebase.database().ref("Accounts").child(id);
-                        userd.update({
+                        await userd.update({
                             dispoint: point + numsum * 0.05,
                         });
 
@@ -119,7 +119,7 @@ const CartInfo = () => {
                         await setUser({ ...user, discount: point + numsum * 0.04 - 5000 });
                         localStorage.setItem("point", JSON.stringify(point + numsum * 0.04 - 5000))
                         const userd = firebase.database().ref("Accounts").child(id);
-                        userd.update({
+                        await userd.update({
                             dispoint: point + numsum * 0.04 - 5000,
                         });
                     }
