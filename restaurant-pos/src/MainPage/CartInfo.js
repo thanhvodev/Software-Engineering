@@ -102,8 +102,9 @@ const CartInfo = () => {
 
             <div className="d-flex justify-content-between p-2 mb-2">
                 <button type="button" class="btn btn-danger w-100" onClick={async () => {
-                    if (user) {
-                        await setUser({ ...user, discount: user.discount + numsum * 0.05 });
+                    if (user && !isDis) {
+                        await setUser({ ...user, discount: point + numsum * 0.05 });
+                        localStorage.setItem("point", JSON.stringify(point + numsum * 0.05))
                         const userd = firebase.database().ref("Accounts").child(id);
                         userd.update({
                             dispoint: point + numsum * 0.05,
@@ -112,6 +113,15 @@ const CartInfo = () => {
                         localStorage.setItem("point", point + numsum * 0.05);
                     } else if (!user && isDis) {
                         alert("Only user can use discount!");
+                    } else if (user && isDis && point < 5000) {
+                        alert("Not enough discount point!")
+                    } else if (user && isDis && point >= 5000) {
+                        await setUser({ ...user, discount: point + numsum * 0.04 - 5000 });
+                        localStorage.setItem("point", JSON.stringify(point + numsum * 0.04 - 5000))
+                        const userd = firebase.database().ref("Accounts").child(id);
+                        userd.update({
+                            dispoint: point + numsum * 0.04 - 5000,
+                        });
                     }
                 }}>Payment</button>
             </div>
