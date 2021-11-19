@@ -13,6 +13,7 @@ import Details from "./TableReservation/details";
 import Terms from "./TableReservation/terms";
 import { UserContext } from "./components/UserContext";
 import Profile from "./MainPage/Profile";
+import PayPal from "./components/PayPal";
 
 function App() {
 
@@ -32,9 +33,10 @@ function App() {
                         <Route path="/category5" exact component={Category5} />
                         <Route path="/category6" exact component={Category6} />
                         <Route path="/profile" exact component={Profile} />
-                        <Route path="/reservate" exact component = {Reservation} />
-                        <Route path = "/details" exact component = {Details} />
-                        <Route path = "/terms" exact component = {Terms} />
+                        <Route path="/reservate" exact component={Reservation} />
+                        <Route path="/details" exact component={Details} />
+                        <Route path="/terms" exact component={Terms} />
+                        <Route path="/paypal" exact component={PayPal} />
                     </UserContext.Provider>
                 </Switch>
             </Router>
