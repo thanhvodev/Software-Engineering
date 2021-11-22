@@ -43,7 +43,7 @@ function MainPage() {
                   <h5>Dat ban</h5>
                 </Link> : ""}
 
-                {!user ? (
+                {!username_from_local ? (
                   <Link to="/login" className="btn btn-3 col-1">
                     <h5>Login</h5>
                   </Link>
