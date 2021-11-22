@@ -124,53 +124,6 @@ body::-webkit-scrollbar {
     box-shadow: 0 5px 35px 0px rgba(128,0,0,.2);
 }
 
-.table {
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.table label {
-    font-size: larger;
-}
-
-.table .tableList {
-    display: flex;
-    flex-wrap: wrap;
-    border: 2px solid maroon;
-    border-radius: 8px 8px 8px 8px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.tableItem {
-    transition: 1s all;
-}
-
-.tableItem figcaption {
-    text-align: center;
-}
-
-.tableList:hover .tableItem {
-    filter: blur(1px);
-    opacity: .5;
-    transform: scale(.98);
-    box-shadow: none;
-}
-
-.tableList:hover .tableItem:hover {
-    transform: scale(1);
-    filter: blur(0px);
-    opacity: 1;
-    box-shadow: 0 8px 20px 0px rgba(0,0,0,0.25);
-    border-radius: 20px;
-}
-
-.table img {
-    width: 100px;
-    height: auto;
-}
-
 .memberInfo {
     font-size: larger;
     display: flex;

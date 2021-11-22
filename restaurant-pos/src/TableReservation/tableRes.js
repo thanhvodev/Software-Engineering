@@ -75,60 +75,6 @@ function tableRes() {
                     </div>
                 </div>
 
-                <div className = "table">
-                    <label for = "reserveTable">Choose a table</label><br />
-                    <div className = "tableList">
-                        <div className = "tableItem">
-                            <img id = "table1" src = {table} />
-                            <figcaption>Table 1</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table2" src = {table} />
-                            <figcaption>Table 2</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table3" src = {table} />
-                            <figcaption>Table 3</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table4" src = {table} />
-                            <figcaption>Table 4</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table5" src = {table} />
-                            <figcaption>Table 5</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table6" src = {table} />
-                            <figcaption>Table 6</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table7" src = {table} />
-                            <figcaption>Table 7</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table8" src = {table} />
-                            <figcaption>Table 8</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table9" src = {table} />
-                            <figcaption>Table 9</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table10" src = {table} />
-                            <figcaption>Table 10</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table11" src = {table} />
-                            <figcaption>Table 11</figcaption>
-                        </div>
-                        <div className = "tableItem">
-                            <img id = "table12" src = {table} />
-                            <figcaption>Table 12</figcaption>
-                        </div>
-                    </div>
-                </div>
-
                 <div className = "memberInfo">
                     <label for = "contactDetails">Contact Details</label>
                     <div className = "name">
