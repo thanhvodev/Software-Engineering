@@ -18,16 +18,64 @@ function Category1() {
             <div id="Category1" className="category">
                 <p className="title-name">Gas Drinks</p>
                 <div id="foodrow-wrap">
-                    <Scrollbars style={{ width: "98vw", height: "67vh" }}>
+                    <Scrollbars style={{ width: "100vw", height: "67vh" }}>
                         <div id="foodrow">
-                            <FoodComponent id="1" srcImg={coca} stt="1." name="CoCa-Cola" price="15.000 VND" />
-                            <FoodComponent id="2" srcImg={cocazero} stt="2." name="CoCa-Cola Zero" price="15.000 VND" />
-                            <FoodComponent id="3" srcImg={fanta} stt="3." name="Fanta" price="15.000 VND" />
-                            <FoodComponent id="4" srcImg={mirinda} stt="4." name="Mirinda" price="15.000 VND" />
-                            <FoodComponent id="5" srcImg={moutaindew} stt="5." name="Moutaindew" price="15.000 VND" />
-                            <FoodComponent id="6" srcImg={pepsi} stt="6." name="Pepsi" price="15.000 VND" />
-                            <FoodComponent id="7" srcImg={redbull} stt="7." name="Redbull" price="15.000 VND" />
-                            <FoodComponent id="8" srcImg={sprite} stt="8." name="Sprite" price="15.000 VND" />
+                            <FoodComponent
+                                id="1"
+                                srcImg={coca}
+                                stt="1."
+                                name="CoCa-Cola"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="2"
+                                srcImg={cocazero}
+                                stt="2."
+                                name="CoCa-Cola Zero"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="3"
+                                srcImg={fanta}
+                                stt="3."
+                                name="Fanta"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="4"
+                                srcImg={mirinda}
+                                stt="4."
+                                name="Mirinda"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="5"
+                                srcImg={moutaindew}
+                                stt="5."
+                                name="Moutaindew"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="6"
+                                srcImg={pepsi}
+                                stt="6."
+                                name="Pepsi"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="7"
+                                srcImg={redbull}
+                                stt="7."
+                                name="Redbull"
+                                price="15.000 VND"
+                            />
+                            <FoodComponent
+                                id="8"
+                                srcImg={sprite}
+                                stt="8."
+                                name="Sprite"
+                                price="15.000 VND"
+                            />
                         </div>
                     </Scrollbars>
                 </div>

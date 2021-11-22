@@ -17,16 +17,64 @@ function Category5() {
             <MainPage />
             <div id="Category5" className="category">
                 <p className="title-name">Juice</p>
-                <Scrollbars style={{ width: 1500, height: 500 }}>
+                <Scrollbars style={{ width: "100vw", height: 500 }}>
                     <div id="foodrow">
-                        <FoodComponent id="25" srcImg={APPLEJUICE} stt="1." name="Apple Juice" price="50.000 VND" />
-                        <FoodComponent id="26" srcImg={CARROTJUICE} stt="2." name="Carrot Juice" price="50.000 VND" />
-                        <FoodComponent id="27" srcImg={MANGOJUICE} stt="3." name="Mango Juice" price="50.000 VND" />
-                        <FoodComponent id="28" srcImg={ORANGEJUICE} stt="4." name="Orange Juice" price="50.000 VND" />
-                        <FoodComponent id="29" srcImg={PAPAYAJUICE} stt="5." name="Papaya Juice" price="50.000 VND" />
-                        <FoodComponent id="30" srcImg={PINEAPPLEJUICE} stt="6." name="Pineapple Juice" price="50.000 VND" />
-                        <FoodComponent id="31" srcImg={STRAWBERRYJUICE} stt="7." name="Strawberry Juice" price="50.000 VND" />
-                        <FoodComponent id="32" srcImg={WATERMELONJUICE} stt="8." name="Watermelon Juice" price="50.000 VND" />
+                        <FoodComponent
+                            id="25"
+                            srcImg={APPLEJUICE}
+                            stt="1."
+                            name="Apple Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="26"
+                            srcImg={CARROTJUICE}
+                            stt="2."
+                            name="Carrot Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="27"
+                            srcImg={MANGOJUICE}
+                            stt="3."
+                            name="Mango Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="28"
+                            srcImg={ORANGEJUICE}
+                            stt="4."
+                            name="Orange Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="29"
+                            srcImg={PAPAYAJUICE}
+                            stt="5."
+                            name="Papaya Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="30"
+                            srcImg={PINEAPPLEJUICE}
+                            stt="6."
+                            name="Pineapple Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="31"
+                            srcImg={STRAWBERRYJUICE}
+                            stt="7."
+                            name="Strawberry Juice"
+                            price="50.000 VND"
+                        />
+                        <FoodComponent
+                            id="32"
+                            srcImg={WATERMELONJUICE}
+                            stt="8."
+                            name="Watermelon Juice"
+                            price="50.000 VND"
+                        />
                     </div>
                 </Scrollbars>
             </div>
