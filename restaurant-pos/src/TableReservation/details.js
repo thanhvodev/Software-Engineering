@@ -38,10 +38,6 @@ function Details() {
                             <th>People:</th>
                             <td>2</td>
                         </tr>
-                        <tr>
-                            <th>Table(s):</th>
-                            <td>Table 5 + 6</td>
-                        </tr>
                     </table>
                     <table id = "memberDetails">
                         <tr>

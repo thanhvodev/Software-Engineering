@@ -69,10 +69,6 @@ function tableRes() {
                             <option label = "9:30 PM" value = "21:30"></option>
                         </optgroup>
                     </select>
-
-                    <div className = "button">
-                        <button id = "searchButton"><span>Search</span></button>
-                    </div>
                 </div>
 
                 <div className = "memberInfo">

@@ -194,23 +194,6 @@ body::-webkit-scrollbar {
     transition: 0.5s;
 }
 
-.button #searchButton span:after {
-    content: '\2315';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-  
-.button #searchButton:hover span {
-    padding-right: 25px;
-}
-  
-.button #searchButton:hover span:after {
-    opacity: 1;
-}
-
 .button #nextButton span:after {
     content: '\226b';
     position: absolute;
