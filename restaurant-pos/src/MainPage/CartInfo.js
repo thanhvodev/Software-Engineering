@@ -112,7 +112,7 @@ const CartInfo = () => {
                 <p className="fw-bold">{!isDis ? numsumString : numsumDisString}</p>
             </div>
             <input id="discount" type="checkbox" onClick={() => { setIsDis(!isDis); }} />
-            <label for="discount">Dùng 5000 điểm để giảm 5.000đ?</label>
+            <label for="discount">Dùng 5000 điểm để giảm 5%?</label>
 
             <div className="d-flex justify-content-between p-2 mb-2">
 
