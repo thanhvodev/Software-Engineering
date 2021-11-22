@@ -99,7 +99,7 @@ const CartInfo = () => {
     const numsumDis = sum * 0.95;
     const numsumDisString = numsumDis.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
 
-    let pay = sum;
+    let pay = isDis ? numsumDis : numsum;
     sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
 
 
@@ -115,6 +115,7 @@ const CartInfo = () => {
             <label for="discount">Dùng 5000 điểm để giảm 5.000đ?</label>
 
             <div className="d-flex justify-content-between p-2 mb-2">
+
                 <Link to={
                     {
                         pathname: '/paypal',
@@ -134,9 +135,11 @@ const CartInfo = () => {
 
                             localStorage.setItem("point", point + numsum * 0.05);
                         } else if (!user && isDis) {
-                            alert("Only user can use discount!");
+                            alert("Only user can use discount. Your charge will be the same!");
+                            setIsDis(false);
                         } else if (user && isDis && point < 5000) {
-                            alert("Not enough discount point!")
+                            alert("Not enough discount point. Your charge will be the same!");
+                            setIsDis(false);
                         } else if (user && isDis && point >= 5000) {
                             await setUser({ ...user, discount: point + numsum * 0.04 - 5000 });
                             localStorage.setItem("point", JSON.stringify(point + numsum * 0.04 - 5000))
@@ -145,7 +148,7 @@ const CartInfo = () => {
                                 dispoint: point + numsum * 0.04 - 5000,
                             });
                         }
-                    }} onClick={() => deleteAllCookies()}>Payment</button>
+                    }}>Payment</button>
                 </Link>
             </div>
         </div >
