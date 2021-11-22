@@ -3,6 +3,7 @@ import { UserContext } from "../components/UserContext";
 import firebase from "../components/firebase";
 import { func } from 'prop-types';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 const addCart = (id, name, srtImg, quantity, price) => {
     if (quantity === 0) {
@@ -10,6 +11,18 @@ const addCart = (id, name, srtImg, quantity, price) => {
     }
     else {
         document.cookie = id + '=' + name + ',' + srtImg + ',' + quantity + ',' + price;
+    }
+}
+
+
+const deleteAllCookies = () => {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 }
 
@@ -86,6 +99,7 @@ const CartInfo = () => {
     const numsumDis = sum * 0.95;
     const numsumDisString = numsumDis.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
 
+    let pay = sum;
     sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' VND';
 
 
@@ -101,31 +115,40 @@ const CartInfo = () => {
             <label for="discount">Dùng 5000 điểm để giảm 5.000đ?</label>
 
             <div className="d-flex justify-content-between p-2 mb-2">
-                <button type="button" class="btn btn-danger w-100" onClick={async () => {
-                    if (user && !isDis) {
-                        await setUser({ ...user, discount: point + numsum * 0.05 });
-                        localStorage.setItem("point", JSON.stringify(point + numsum * 0.05))
-                        const userd = firebase.database().ref("Accounts").child(id);
-                        await userd.update({
-                            dispoint: point + numsum * 0.05,
-                        });
-
-                        localStorage.setItem("point", point + numsum * 0.05);
-                    } else if (!user && isDis) {
-                        alert("Only user can use discount!");
-                    } else if (user && isDis && point < 5000) {
-                        alert("Not enough discount point!")
-                    } else if (user && isDis && point >= 5000) {
-                        await setUser({ ...user, discount: point + numsum * 0.04 - 5000 });
-                        localStorage.setItem("point", JSON.stringify(point + numsum * 0.04 - 5000))
-                        const userd = firebase.database().ref("Accounts").child(id);
-                        await userd.update({
-                            dispoint: point + numsum * 0.04 - 5000,
-                        });
+                <Link to={
+                    {
+                        pathname: '/paypal',
+                        state: {
+                            value: { pay }
+                        }
                     }
-                }}>Payment</button>
+                } >
+                    <button type="button" class="btn btn-danger w-100" onClick={async () => {
+                        if (user && !isDis) {
+                            await setUser({ ...user, discount: point + numsum * 0.05 });
+                            localStorage.setItem("point", JSON.stringify(point + numsum * 0.05))
+                            const userd = firebase.database().ref("Accounts").child(id);
+                            await userd.update({
+                                dispoint: point + numsum * 0.05,
+                            });
+
+                            localStorage.setItem("point", point + numsum * 0.05);
+                        } else if (!user && isDis) {
+                            alert("Only user can use discount!");
+                        } else if (user && isDis && point < 5000) {
+                            alert("Not enough discount point!")
+                        } else if (user && isDis && point >= 5000) {
+                            await setUser({ ...user, discount: point + numsum * 0.04 - 5000 });
+                            localStorage.setItem("point", JSON.stringify(point + numsum * 0.04 - 5000))
+                            const userd = firebase.database().ref("Accounts").child(id);
+                            await userd.update({
+                                dispoint: point + numsum * 0.04 - 5000,
+                            });
+                        }
+                    }} onClick={() => deleteAllCookies()}>Payment</button>
+                </Link>
             </div>
-        </div>
+        </div >
     )
 
     return (rs);

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "create-react-app": "^4.0.3",
+    "react-calendar": "^3.5.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-paginate": "^8.0.0",
+    "react-router-dom": "6.0.2",
+    "react-scripts": "^4.0.3"
+  }
+}
