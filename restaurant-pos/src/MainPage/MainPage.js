@@ -31,7 +31,7 @@ function MainPage() {
                     height="50px"
                   />
                   <p>Back to Home</p>
-                  <p className="bg-primary">Hello {user ? localStorage.getItem("username") : "Bạn"}</p>
+                  <p className="bg-primary">Hello</p>
                 </div>
                 <Link to="/register" className="btn btn-3 col-1">
                   <h5>Register</h5>
