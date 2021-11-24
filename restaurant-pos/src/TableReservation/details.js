@@ -6,26 +6,26 @@ import { Link } from "react-router-dom";
 
 function Details() {
     return (
-        <div className = "reservation">
-            <div class = "reservationHeader">
-                <h2 id = "reservationHeading">RESERVATION</h2>        
-                <h3 id = "webIntro">Make a reservation at our restaurant</h3>
+        <div className="reservation reservation2">
+            <div class="reservationHeader">
+                <h2 id="reservationHeading">RESERVATION</h2>
+                <h3 id="webIntro">Make a reservation at our restaurant</h3>
             </div>
 
-            <div class = "reservationMain">
-                <div class = "restaurantInfo">
-                    <div class = "restaurantLogo">
-                        <img id = "logo" alt = "Restaurant logo" src = {logo} />
+            <div class="reservationMain">
+                <div class="restaurantInfo">
+                    <div class="restaurantLogo">
+                        <img id="logo" alt="Restaurant logo" src={logo} />
                     </div>
 
-                    <div class = "restaurantName">
-                        <p id = "name">HCMUT Restaurant</p>
+                    <div class="restaurantName">
+                        <p id="name">HCMUT Restaurant</p>
                     </div>
-                </div> 
+                </div>
 
-                <div class = "reservationDetails">
-                    <h2 id = "detailsHeader">Confirm your details below</h2>
-                    <table id = "tableDetails">
+                <div class="reservationDetails">
+                    <h2 id="detailsHeader">Confirm your details below</h2>
+                    <table id="tableDetails">
                         <tr>
                             <th>Date:</th>
                             <td>November 16, 2021</td>
@@ -39,7 +39,7 @@ function Details() {
                             <td>2</td>
                         </tr>
                     </table>
-                    <table id = "memberDetails">
+                    <table id="memberDetails">
                         <tr>
                             <th>First Name:</th>
                             <td>Chain</td>
@@ -59,21 +59,27 @@ function Details() {
                     </table>
                 </div>
 
-                <div class = "terms">
-                    <input type = "checkbox" id = "termsCheckbox" value = "terms" />
-                    <label id = "terms_conditions">I have read and accept the Booking Terms and Conditions</label>
+                <div class="terms">
+                    <input type="checkbox" id="termsCheckbox" value="terms" />
+                    <label id="terms_conditions">
+                        I have read and accept the Booking Terms and Conditions
+                    </label>
                 </div>
             </div>
 
-            <div class = "navigationButton">
-                <Link to = "/reservate">
-                    <div class = "button">
-                        <button id = "backButton"><span>Back</span></button>
+            <div class="navigationButton">
+                <Link to="/reservate">
+                    <div class="button">
+                        <button id="backButton">
+                            <span>Back</span>
+                        </button>
                     </div>
                 </Link>
-                <Link to = "/terms">
-                    <div class = "button">
-                        <button id = "nextButton"><span>Next</span></button>
+                <Link to="/terms">
+                    <div class="button">
+                        <button id="nextButton">
+                            <span>Next</span>
+                        </button>
                     </div>
                 </Link>
             </div>
