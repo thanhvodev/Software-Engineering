@@ -60,8 +60,11 @@ function Details() {
 
                 <div class="terms">
                     <input type="checkbox" id="termsCheckbox" value="terms" />
-                    <label id="terms_conditions">
-                        I have read and accept the Booking Terms and Conditions
+                    <label id = "terms_conditions">
+                        <span>I have read and accept the </span>                        
+                        <Link to = "/terms">
+                            <span>Booking Terms and Conditions</span>                            
+                        </Link>
                     </label>
                 </div>
             </div>
