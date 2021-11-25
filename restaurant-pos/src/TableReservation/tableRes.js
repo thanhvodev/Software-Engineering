@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
 import logo from "../img/TableReservation/HCMUT.png";
-import table from "../img/TableReservation/table.png";
-import home from "../img/home.png";
 import "./tableRes.css";
 import { Link } from "react-router-dom";
 
+function disableTime(currentHour, currentMinute) {    
+    var reservateTime = document.getElementById('reservateTime');
+    let i = 0;
+    while (true) {
+        let option = reservateTime.options[i];
+        let tempTime = option.value;
+        tempTime = tempTime.split(':');
+        let hour = parseInt(tempTime[0]);
+        let minute = parseInt(tempTime[1]);
+        if (hour < currentHour) {
+            option.disabled = true;
+        } else if (hour == currentHour) {                    
+            reservateTime.options[i].disabled = true;
+            if (currentMinute <= 30) {
+                reservateTime.options[i + 2].selected = true;
+                break;                   
+            } else {
+                reservateTime.options[i + 1].disabled = true;
+                reservateTime.options[i + 3].selected = true;
+                break;
+            }
+        }
+        i++;
+    }
+}
+
 function tableRes() {
     var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    var day = dateObj.getUTCDate();
-    var year = dateObj.getUTCFullYear();
-    var hour = dateObj.getUTCHours();
+    var month = dateObj.getMonth() + 1; //months from 1-12
+    var day = dateObj.getDate();
+    var year = dateObj.getFullYear();
+    var hour = dateObj.getHours();
     var minute = dateObj.getMinutes();
-
-    var newdate = year + "/" + month + "/" + day;
+    var newdate = year + "-" + month + "-" + day;
     return (
         <div className = "reservation">
             <h2 id = "reservationHeading">RESERVATION</h2>        
@@ -31,11 +54,11 @@ function tableRes() {
 
                 <div className = "tableInfo">
                     <label for = "reservatePartySize">Party Size</label><br />
-                    <input type = "number" id = "reservatePartySize" value = "1" min = "1" max = "20" /><br />
+                    <input type = "number" id = "reservatePartySize" defaultValue = "1" min = "1" max = "20" /><br />
                     <label for = "resvateData">Date</label><br />
-                    <input type = "date" id = "reservateDate" value = {newdate} min = {newdate} /><br />
+                    <input type = "date" id = "reservateDate" pattern = "dd-mm-yyyy" defaultValue = {newdate} min = {newdate} /><br />
                     <label for = "reservateTime">Time</label><br />
-                    <select id = "reservateTime" name = "Time Reservation">
+                    <select id = "reservateTime" name = "Time Reservation" onClick = {disableTime(hour, minute)}>
                         <optgroup label = "Breakfast">
                             <option label = "7:00 AM" value = "7:00"></option>
                             <option label = "7:30 AM" value = "7:30"></option>

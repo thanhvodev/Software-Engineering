@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../img/TableReservation/HCMUT.png";
-import home from "../img/home.png";
 import "./terms.css";
 import { Link } from "react-router-dom";
 
