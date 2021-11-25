@@ -14,6 +14,9 @@ html {
 .MainPage .btn-3 {
     margin: auto;
     height: 40px;
+    padding: auto;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 .MainPage .btn-3:hover {
@@ -118,7 +121,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    text-align:center;
+    text-align: center;
     padding-left: 4%;
     width: 100vw;
 }
