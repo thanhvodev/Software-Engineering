@@ -3,7 +3,7 @@ import logo from "../img/TableReservation/HCMUT.png";
 import "./tableRes.css";
 import { Link } from "react-router-dom";
 
-function disableTime(currentHour, currentMinute) {    
+/*function disableTime(currentHour, currentMinute) {    
     var reservateTime = document.getElementById('reservateTime');
     let i = 0;
     while (true) {
@@ -27,7 +27,7 @@ function disableTime(currentHour, currentMinute) {
         }
         i++;
     }
-}
+}*/
 
 function tableRes() {
     var dateObj = new Date();
@@ -58,7 +58,7 @@ function tableRes() {
                     <label for = "resvateData">Date</label><br />
                     <input type = "date" id = "reservateDate" pattern = "dd-mm-yyyy" defaultValue = {newdate} min = {newdate} /><br />
                     <label for = "reservateTime">Time</label><br />
-                    <select id = "reservateTime" name = "Time Reservation" onClick = {disableTime(hour, minute)}>
+                    <select id = "reservateTime" name = "Time Reservation">
                         <optgroup label = "Breakfast">
                             <option label = "7:00 AM" value = "7:00"></option>
                             <option label = "7:30 AM" value = "7:30"></option>
