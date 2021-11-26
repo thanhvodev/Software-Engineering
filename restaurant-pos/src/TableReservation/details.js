@@ -4,6 +4,7 @@ import "./details.css";
 import { Link } from "react-router-dom";
 
 function Details() {
+    //var checked_temrms = document.getElementById("termsCheckbox").checked;
     return (
         <div className="reservation reservation2">
             <div class="reservationHeader">
@@ -77,13 +78,21 @@ function Details() {
                         </button>
                     </div>
                 </Link>
-                <Link to="/terms">
+                {true ? 
+                (<Link to="/complete">
+                    <div class="button">
+                        <button id="nextButton">
+                            <span>Complete Booking</span>
+                        </button>
+                    </div>
+                </Link>) : 
+                (<Link to="/terms">
                     <div class="button">
                         <button id="nextButton">
                             <span>Next</span>
                         </button>
                     </div>
-                </Link>
+                </Link>)}
             </div>
         </div>
     );

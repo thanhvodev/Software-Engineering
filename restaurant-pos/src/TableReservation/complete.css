@@ -1,38 +1,3 @@
-* {
-    box-sizing: border-box;
-    font-family: Cambria;
-}
-
-html {
-    background: url("background.png") no-repeat center center fixed;
-    background-size: cover;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-    display: none;
-}
-
-#reservationHeading,
-#webIntro {
-    width: 30vw;
-    padding: 10px;
-    background-color: azure;
-    border: 2px solid #2c3e50;
-    border-radius: 10px 0 10px 0;
-}
-
-@media only screen and (max-width: 600px) {
-    #reservationHeading,
-    #webIntro {
-        width: 100%;
-        padding: 10px;
-        border: 2px solid #2c3e50;
-        border-radius: 10px 0 10px 0;
-    }
-}
-
 .detailsMain {
     display: flex;
     flex-direction: column;
@@ -42,42 +7,6 @@ html::-webkit-scrollbar {
     background-color: azure;
     border: 2px solid #2c3e50;
     border-radius: 10px;
-}
-
-.restaurantInfo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    height: 50px;
-    background: white;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.restaurantLogo {
-    flex-grow: 2;
-}
-
-.restaurantName {
-    flex-grow: 8;
-}
-
-.restaurantName p {
-    text-align: center;
-    font-size: xx-large;
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
-.restaurantLogo img {
-    width: 50px;
-    height: 50px;
-}
-
-.restaurantInfo:hover {
-    box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.2);
 }
 
 .reservationComplete {
@@ -95,7 +24,6 @@ html::-webkit-scrollbar {
     height: 200px;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.1);
-    -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000000 90%);
     animation: spinner-wiggle 1.2s infinite;
 }
 .spinner:before,
@@ -140,50 +68,27 @@ html::-webkit-scrollbar {
     }
 }
 
-.navigationButton {
-    display: flex;
-    margin: 0 20% 0 20%;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.button {
-    height: fit-content;
-    width: fit-content;
-    margin-top: 10px;
-}
-
-.button button {
-    border: none;
-    border-radius: 8px;
-    background-color: maroon;
-    color: white;
-    font-size: large;
-    height: 40px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-}
-
-.button button span {
-    cursor: pointer;
+.animate-bottom {
     position: relative;
-    transition: 0.5s;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
 }
-
-.button #backButton span:after {
-    content: "\226a";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: -20px;
-    transition: 0.5s;
+  
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
 }
-
-.button #backButton:hover span {
-    padding-left: 25px;
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
 }
-
-.button #backButton:hover span:after {
-    opacity: 1;
+  
+#bookingTitle {
+    height: inherit;
+    font-size: large;
+    display: none;
+    text-align: center;
 }

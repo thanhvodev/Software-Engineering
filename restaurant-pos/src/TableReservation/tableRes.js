@@ -30,10 +30,12 @@ function disableTime(reservateTime) {
         } else if (hour == currentHour) {                    
             tempAllTime[i].isDisabled = true;
             if (currentMinute <= 30) {
-                return tempAllTime[i + 2].value;                 
+                //return tempAllTime[i + 2].value;
+                break;                 
             } else {
                 tempAllTime[i + 1].isDisabled = true;
-                return tempAllTime[i + 3].value;
+                //return tempAllTime[i + 3].value;
+                break;
             }
         }
     }

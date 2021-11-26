@@ -45,11 +45,13 @@ function Terms() {
                         </button>
                     </div>
                 </Link>
-                <div className="button">
-                    <button id="continueButton">
-                        <span>Accept and Continue</span>
-                    </button>
-                </div>
+                <Link to = "/complete">
+                    <div className="button">
+                        <button id="continueButton">
+                            <span>Accept and Continue</span>
+                        </button>
+                    </div>
+                </Link>
             </div>
         </div>
     );
