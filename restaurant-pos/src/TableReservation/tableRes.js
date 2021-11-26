@@ -6,37 +6,38 @@ import 'react-day-picker/lib/style.css';
 import logo from "../img/TableReservation/HCMUT.png";
 import "./tableRes.css";
 import { Link } from "react-router-dom";
+import validator from 'validator';
 
 import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 
-/*
-function disableTime(currentHour, currentMinute) {    
-    var reservateTime = document.getElementById('reservateTime');
-    let i = 0;
-    while (true) {
-        let option = reservateTime.options[i];
-        let tempTime = option.value;
+function disableTime(reservateTime) {
+    const dateObj = new Date();
+    let currentHour = dateObj.getHours();
+    let currentMinute = dateObj.getMinutes();
+
+    let tempAllTime = [];
+    for (let i = 0; i < 3; i++) {
+        tempAllTime = tempAllTime.concat(reservateTime[i].options);
+    }
+    let numTime = tempAllTime.length;
+    for (let i = 0; i < numTime; i++) {
+        let tempTime = tempAllTime[i].value;
         tempTime = tempTime.split(':');
         let hour = parseInt(tempTime[0]);
-        let minute = parseInt(tempTime[1]);
         if (hour < currentHour) {
-            option.disabled = true;
+            tempAllTime[i].isDisabled = true;
         } else if (hour == currentHour) {                    
-            reservateTime.options[i].disabled = true;
+            tempAllTime[i].isDisabled = true;
             if (currentMinute <= 30) {
-                reservateTime.options[i + 2].selected = true;
-                break;                   
+                return tempAllTime[i + 2].value;                 
             } else {
-                reservateTime.options[i + 1].disabled = true;
-                reservateTime.options[i + 3].selected = true;
-                break;
+                tempAllTime[i + 1].isDisabled = true;
+                return tempAllTime[i + 3].value;
             }
         }
-        i++;
     }
 }
-*/
 
 function parseDate(str, format, locale) {
     const parsed = dateFnsParse(str, format, new Date(), { locale });
@@ -96,8 +97,31 @@ const reservateTime = [
     }
 ];
 
+disableTime(reservateTime);
+
 function TableRes() {
-    const [startDate, setStartDate] = useState(new Date());
+    var isPhoneValid = false;    
+    var isMailValid = false;
+    const validateEmail = (e) => {
+        var email = e.target.value
+  
+        if (validator.isEmail(email)) {
+            isMailValid = true;
+        } else {
+            isMailValid = false;
+        }
+    }
+
+    const validatePhoneNumber = (pn) => {
+        
+        var phoneNumber = pn.target.value
+
+        if (validator.isMobilePhone(phoneNumber)) {
+            isPhoneValid = true;
+        } else {
+            isPhoneValid = false;
+        }
+    }
 
     return (
         <div className = "reservation">
@@ -129,7 +153,7 @@ function TableRes() {
                     />
                     <br />
                     <label for = "reservateTime">Time</label><br />
-                    <Select id = "reservate_time" options = {reservateTime}/>
+                    <Select id = "reservateTime" options = {reservateTime} />
                 </div>
 
                 <div className = "memberInfo">
@@ -144,10 +168,10 @@ function TableRes() {
                     </div>
                     <div className = "contact">
                         <div className = "mobileNumber">
-                            <input type = "text" id = "mobileNumber" required placeholder = "Mobile Number" pattern = "\d{10}" />
+                            <input type = "text" id = "mobileNumber" required placeholder = "Mobile Number" onChange={(pn) => validatePhoneNumber(pn)} />
                         </div>
                         <div className = "email">
-                            <input type = "email" id = "email" required placeholder = "Email" />
+                            <input type = "email" id = "email" required placeholder = "Email" onChange={(e) => validateEmail(e)} />
                         </div>
                     </div>
                     <div className = "comment">
@@ -163,11 +187,17 @@ function TableRes() {
                         <button id = "backHomeButton"><span>Back to home</span></button>
                     </div>
                 </Link>
-                <Link to = "/details">
+                {(true) ? 
+                (<Link to = "/details">
                     <div className = "button">
                         <button id = "nextButton"><span>Next</span></button>
                     </div>
-                </Link>
+                </Link>)
+                : 
+                (<div className = "button">
+                    <button id = "nextButton"><span>Next</span></button>
+                </div>)}
+                
             </div>   
         </div>
     );
