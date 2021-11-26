@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../img/TableReservation/HCMUT.png";
 import "./complete.css";
 import { Link } from "react-router-dom";
-import firebase from "firebase";
+import CancleRes from "./cancleRes";
 
 function myFunction() {
     setTimeout(showPage, 3000);
@@ -17,16 +17,6 @@ function Complete() {
     const reservation_code = localStorage.getItem("Reservation_code")
         ? JSON.parse(localStorage.getItem("Reservation_code"))
         : "";
-
-    const id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : "";
-    function handleCancle() {
-        const userd = firebase.database().ref("Accounts").child(id);
-        userd.update({
-            Reservation_code: "0",
-        });
-
-        localStorage.setItem("Reservation_code", JSON.stringify("0"));
-    }
 
     return (
         <div className="reservation reservation2">
@@ -65,7 +55,7 @@ function Complete() {
                     </div>
                 </Link>
                 <div className="button">
-                    <button id="backHomeButton" onClick={handleCancle}>
+                    <button id="backHomeButton" onClick={CancleRes}>
                         <span>Cancel</span>
                     </button>
                 </div>
