@@ -14,7 +14,8 @@ html {
 .MainPage .btn-3 {
     margin: auto;
     height: 40px;
-    padding: auto;
+    width: auto;
+    text-align: center;
     font-size: 1.25rem;
     font-weight: 500;
 }

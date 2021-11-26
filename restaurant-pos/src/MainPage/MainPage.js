@@ -22,7 +22,7 @@ function MainPage() {
                     <div className="upperbody">
                         <div className="container-fluid">
                             <div className="header row">
-                                <div id="Backtohome" className="col-9">
+                                {/* <div id="Backtohome" className="col-9">
                                     <img
                                         id="home"
                                         src={home}
@@ -31,8 +31,8 @@ function MainPage() {
                                         height="50px"
                                     />
                                     <p>Back to Home</p>
-                                    <p className="bg-primary">Hello</p>
-                                </div>
+                                </div> */}
+                                <p id="Backtohome">Hello</p>
                                 {!username_from_local ? (
                                     <Link to="/register" className="btn btn-3 col-1">
                                         <h5>Register</h5>
@@ -66,7 +66,7 @@ function MainPage() {
                                         }}
                                         className="btn btn-3 col-1"
                                     >
-                                        Log Out
+                                        <h5>Log Out</h5>
                                     </button>
                                 )}
                                 <button

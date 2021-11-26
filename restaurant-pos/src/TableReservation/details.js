@@ -5,6 +5,29 @@ import { Link } from "react-router-dom";
 
 function Details() {
     //var checked_temrms = document.getElementById("termsCheckbox").checked;
+    const party_size = localStorage.getItem("z_tableRes_party_size")
+        ? JSON.parse(localStorage.getItem("z_tableRes_party_size"))
+        : "";
+    const FN = localStorage.getItem("z_tableRes_firstname")
+        ? JSON.parse(localStorage.getItem("z_tableRes_firstname"))
+        : "";
+    const LN = localStorage.getItem("z_tableRes_lastname")
+        ? JSON.parse(localStorage.getItem("z_tableRes_lastname"))
+        : "";
+    const number = localStorage.getItem("z_tableRes_mobile_number")
+        ? JSON.parse(localStorage.getItem("z_tableRes_mobile_number"))
+        : "";
+    const email = localStorage.getItem("z_tableRes_email")
+        ? JSON.parse(localStorage.getItem("z_tableRes_email"))
+        : "";
+
+    const date = localStorage.getItem("z_tableRes_date")
+        ? JSON.parse(localStorage.getItem("z_tableRes_date"))
+        : "";
+    const time = localStorage.getItem("z_tableRes_time")
+        ? JSON.parse(localStorage.getItem("z_tableRes_time"))
+        : "";
+
     return (
         <div className="reservation reservation2">
             <div class="reservationHeader">
@@ -28,43 +51,43 @@ function Details() {
                     <table id="tableDetails">
                         <tr>
                             <th>Date:</th>
-                            <td>November 16, 2021</td>
+                            <td>{date}</td>
                         </tr>
                         <tr>
                             <th>Time:</th>
-                            <td>11:45 AM</td>
+                            <td>{time}</td>
                         </tr>
                         <tr>
                             <th>People:</th>
-                            <td>2</td>
+                            <td>{party_size}</td>
                         </tr>
                     </table>
                     <table id="memberDetails">
                         <tr>
                             <th>First Name:</th>
-                            <td>Chain</td>
+                            <td>{FN}</td>
                         </tr>
                         <tr>
                             <th>Last Name:</th>
-                            <td>Pima</td>
+                            <td>{LN}</td>
                         </tr>
                         <tr>
                             <th>Mobile Number:</th>
-                            <td>0779555994</td>
+                            <td>{number}</td>
                         </tr>
                         <tr>
                             <th>Email Address:</th>
-                            <td>nguoibian0541@gmail.com</td>
+                            <td>{email}</td>
                         </tr>
                     </table>
                 </div>
 
                 <div class="terms">
                     <input type="checkbox" id="termsCheckbox" value="terms" />
-                    <label id = "terms_conditions">
-                        <span>I have read and accept the </span>                        
-                        <Link to = "/terms">
-                            <span>Booking Terms and Conditions</span>                            
+                    <label id="terms_conditions">
+                        <span>I have read and accept the </span>
+                        <Link to="/terms">
+                            <span>Booking Terms and Conditions</span>
                         </Link>
                     </label>
                 </div>
@@ -78,21 +101,23 @@ function Details() {
                         </button>
                     </div>
                 </Link>
-                {true ? 
-                (<Link to="/complete">
-                    <div class="button">
-                        <button id="nextButton">
-                            <span>Complete Booking</span>
-                        </button>
-                    </div>
-                </Link>) : 
-                (<Link to="/terms">
-                    <div class="button">
-                        <button id="nextButton">
-                            <span>Next</span>
-                        </button>
-                    </div>
-                </Link>)}
+                {true ? (
+                    <Link to="/complete">
+                        <div class="button">
+                            <button id="nextButton">
+                                <span>Complete Booking</span>
+                            </button>
+                        </div>
+                    </Link>
+                ) : (
+                    <Link to="/terms">
+                        <div class="button">
+                            <button id="nextButton">
+                                <span>Next</span>
+                            </button>
+                        </div>
+                    </Link>
+                )}
             </div>
         </div>
     );
