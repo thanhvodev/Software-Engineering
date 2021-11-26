@@ -54,6 +54,7 @@ function Register() {
             z_tableRes_mobile_number: "",
             z_tableRes_email: "",
             z_tableRes_comment: "",
+            Reservation_code: "",
         };
 
         if (useracc.filter(isExist).length === 0) {

@@ -15,6 +15,11 @@ function MainPage() {
         ? JSON.parse(localStorage.getItem("username"))
         : "";
 
+    const reservation_code = localStorage.getItem("Reservation_code")
+        ? JSON.parse(localStorage.getItem("Reservation_code"))
+        : "";
+    console.log(reservation_code);
+
     return (
         <div className="menu">
             <div className="container-fluid  MainPage">
@@ -44,9 +49,15 @@ function MainPage() {
                                     <h5>Profile</h5>
                                 </Link>
                                 {username_from_local ? (
-                                    <Link to="/reservate" className="btn btn-3 col-1">
-                                        <h5>Reservations</h5>
-                                    </Link>
+                                    reservation_code == 0 ? (
+                                        <Link to="/reservate" className="btn btn-3 col-1">
+                                            <h5>Reservations</h5>
+                                        </Link>
+                                    ) : (
+                                        <Link to="/complete" className="btn btn-3 col-1">
+                                            <h5>Reservations</h5>
+                                        </Link>
+                                    )
                                 ) : (
                                     <></>
                                 )}

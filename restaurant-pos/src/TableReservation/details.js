@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../img/TableReservation/HCMUT.png";
 import "./details.css";
 import { Link } from "react-router-dom";
+import firebase from "firebase";
 
 function Details() {
     //var checked_temrms = document.getElementById("termsCheckbox").checked;
@@ -27,6 +28,24 @@ function Details() {
     const time = localStorage.getItem("z_tableRes_time")
         ? JSON.parse(localStorage.getItem("z_tableRes_time"))
         : "";
+
+    const id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : "";
+
+    function handleComplete() {
+        const getRandomInt = (min, max) => {
+            return Math.floor(Math.random() * (max - min)) + min;
+        };
+        const numtable = getRandomInt(1, 30);
+
+        const table_code = "TABLE-" + numtable;
+
+        const userd = firebase.database().ref("Accounts").child(id);
+        userd.update({
+            Reservation_code: table_code,
+        });
+
+        localStorage.setItem("Reservation_code", JSON.stringify(table_code));
+    }
 
     return (
         <div className="reservation reservation2">
@@ -101,23 +120,14 @@ function Details() {
                         </button>
                     </div>
                 </Link>
-                {true ? (
-                    <Link to="/complete">
-                        <div class="button">
-                            <button id="nextButton">
-                                <span>Complete Booking</span>
-                            </button>
-                        </div>
-                    </Link>
-                ) : (
-                    <Link to="/terms">
-                        <div class="button">
-                            <button id="nextButton">
-                                <span>Next</span>
-                            </button>
-                        </div>
-                    </Link>
-                )}
+
+                <Link to="/complete">
+                    <div class="button">
+                        <button id="nextButton" onClick={handleComplete}>
+                            <span>Complete Booking</span>
+                        </button>
+                    </div>
+                </Link>
             </div>
         </div>
     );
