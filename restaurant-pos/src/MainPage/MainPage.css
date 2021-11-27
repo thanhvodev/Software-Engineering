@@ -15,6 +15,7 @@ html {
     margin: auto;
     height: 40px;
     width: auto;
+    color: rgb(68, 179, 231);
     text-align: center;
     font-size: 1.25rem;
     font-weight: 500;
@@ -108,6 +109,7 @@ html {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     -webkit-border-radius: 10px;
+    position: relative;
 }
 
 #FoodComponent:hover {
@@ -154,7 +156,6 @@ html {
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 #price-and-cart #foodprice {
@@ -163,6 +164,8 @@ html {
     font-style: italic;
     padding-top: 3px;
     color: red;
+    position: absolute;
+    bottom: -10px;
 }
 
 #price-and-cart #cartIcon {
