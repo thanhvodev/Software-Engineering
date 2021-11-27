@@ -41,9 +41,6 @@ function MainPage() {
                                 ) : (
                                     <></>
                                 )}
-                                {/* <Link to="/profile" className="btn btn-3 col-1">
-                                    <h5>Profile</h5>
-                                </Link> */}
                                 {username_from_local ? (
                                     <Link to="/profile" className="btn btn-3 col-1">
                                         <h5>Profile</h5>

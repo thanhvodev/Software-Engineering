@@ -1,0 +1,5 @@
+.register {
+    width: 100vw;
+    height: 0vh;
+    background-image: url("../img/background.jpg");
+}
