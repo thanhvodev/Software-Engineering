@@ -33,7 +33,7 @@ function MainPage() {
                     <div className="upperbody">
                         <div className="container-fluid">
                             <div className="header row d-flex justify-content-end">
-                                <div className="col-6"></div>
+                                <div className={username_from_local ? "col-7" : "col-8"}></div>
                                 {!username_from_local ? (
                                     <Link to="/register" className="btn btn-3 col-1">
                                         <h5>Register</h5>
@@ -41,9 +41,16 @@ function MainPage() {
                                 ) : (
                                     <></>
                                 )}
-                                <Link to="/profile" className="btn btn-3 col-1">
+                                {/* <Link to="/profile" className="btn btn-3 col-1">
                                     <h5>Profile</h5>
-                                </Link>
+                                </Link> */}
+                                {username_from_local ? (
+                                    <Link to="/profile" className="btn btn-3 col-1">
+                                        <h5>Profile</h5>
+                                    </Link>
+                                ) : (
+                                    <></>
+                                )}
                                 {username_from_local ? (
                                     reservation_code == 0 ? (
                                         <Link to="/reservate" className="btn btn-3 col-1">
