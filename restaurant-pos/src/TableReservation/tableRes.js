@@ -106,11 +106,11 @@ function TableRes() {
     const id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : "";
 
     const [party_size, setParty_size] = useState(0);
-    const [firstname, setFirstname] = useState();
-    const [lastname, setLastname] = useState();
-    const [mobile_number, setMobile_number] = useState();
-    const [email, setEmail] = useState();
-    const [comment, setComment] = useState();
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [mobile_number, setMobile_number] = useState("");
+    const [email, setEmail] = useState("");
+    const [comment, setComment] = useState("");
 
     const Reservation = (e) => {
         const userd = firebase.database().ref("Accounts").child(id);
