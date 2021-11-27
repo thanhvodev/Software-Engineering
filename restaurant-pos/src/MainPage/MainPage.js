@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import Navtest from "./Nav-test";
-import home from "../img/home.png";
 import cart from "../img/cart.svg";
 import "./MainPage.css";
 import useCart from "./useCart";
 import Cart from "../MainPage/Cart";
 import { Link } from "react-router-dom";
 import { UserContext } from "../components/UserContext";
+import Checktime from "../TableReservation/checktime";
 
 function MainPage() {
     const { isShowing, toggle } = useCart(false);
@@ -18,8 +18,14 @@ function MainPage() {
     const reservation_code = localStorage.getItem("Reservation_code")
         ? JSON.parse(localStorage.getItem("Reservation_code"))
         : "";
-    console.log(reservation_code);
 
+    /* __________________________________________________ */
+
+    /* _____________________________________ */
+    if (username_from_local) {
+        Checktime();
+    }
+    /* _____________________________________ */
     return (
         <div className="menu">
             <div className="container-fluid  MainPage">

@@ -18,6 +18,13 @@ function Complete() {
         ? JSON.parse(localStorage.getItem("Reservation_code"))
         : "";
 
+    function handleCancle() {
+        if (window.confirm("Are you sure that you cancle the reservation?")) {
+            CancleRes();
+            alert("Cancle Reservation Success!");
+        }
+    }
+
     return (
         <div className="reservation reservation2">
             <h2 id="reservationHeading">RESERVATION</h2>
@@ -40,7 +47,7 @@ function Complete() {
 
                 <div style={{ display: "none" }} id="bookingTitle" class="animate-bottom">
                     <h3>COMPLETE BOOKING!</h3>
-                    <h1>{`Your Reservation Code is: ${reservation_code}`}</h1>
+                    <h1 id="Res_code">{`Your Reservation Code is: ${reservation_code}`}</h1>
                     <p>Thanks for reservation at HCMUT Restaurant.</p>
                     <p>We hope to have the pleasure of doing business with you in the future.</p>
                 </div>
@@ -49,16 +56,18 @@ function Complete() {
             <div className="navigationButton">
                 <Link to="/">
                     <div className="button">
+                        <button id="cancelButton" onClick={handleCancle}>
+                            <span>Cancel Reservation</span>
+                        </button>
+                    </div>
+                </Link>
+                <Link to="/">
+                    <div className="button">
                         <button id="backHomeButton">
                             <span>Back to home</span>
                         </button>
                     </div>
                 </Link>
-                <div className="button">
-                    <button id="cancelButton" onClick={CancleRes}>
-                        <span>Cancel</span>
-                    </button>
-                </div>
             </div>
         </div>
     );
