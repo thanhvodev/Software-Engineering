@@ -33,17 +33,7 @@ function MainPage() {
                     <div className="upperbody">
                         <div className="container-fluid">
                             <div className="header row">
-                                {/* <div id="Backtohome" className="col-9">
-                                    <img
-                                        id="home"
-                                        src={home}
-                                        alt="Home Icon"
-                                        width="50px"
-                                        height="50px"
-                                    />
-                                    <p>Back to Home</p>
-                                </div> */}
-                                <p id="Backtohome">Hello</p>
+                                {username_from_local ? <p id="Backtohome">Hello</p> : <></>}
                                 {!username_from_local ? (
                                     <Link to="/register" className="btn btn-3 col-1">
                                         <h5>Register</h5>
