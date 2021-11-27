@@ -15,7 +15,7 @@ function Category6() {
             <MainPage />
             <div id="Category6" className="category">
                 <p className="title-name">Seafood</p>
-                <Scrollbars style={{ width: "100vw", height: 500 }}>
+                <Scrollbars style={{ width: "100vw", height: "70vh" }}>
                     <div id="foodrow">
                         <FoodComponent
                             id="6.1"
