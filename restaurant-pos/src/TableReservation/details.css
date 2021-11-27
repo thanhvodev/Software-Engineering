@@ -10,7 +10,7 @@
 
 .reservationDetails table {
     width: 100%;
-    font-size: large;
+    font-size: 120%;
     border-spacing: 10px;
     margin-top: 10px;
     margin-top: 10px;
@@ -27,16 +27,21 @@
 }
 
 .terms {
+    display: flex;
+    flex-direction: row;
     width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .terms #terms_conditions{
-    font-size: larger;
+    margin-left: 1%;
+    font-size: 100%;
 }
 
 .button #backButton span:after {
+    font-size: 1.2vw;
     content: '\226a';
     position: absolute;
     opacity: 0;

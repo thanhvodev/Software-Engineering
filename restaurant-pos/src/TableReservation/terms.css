@@ -15,6 +15,7 @@
 }
 
 .button #continueButton span:after {
+    font-size: 1.2vw;
     content: '\226b';
     position: absolute;
     opacity: 0;

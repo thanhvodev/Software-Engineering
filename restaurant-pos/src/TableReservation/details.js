@@ -102,7 +102,7 @@ function Details() {
                 </div>
 
                 <div class="terms">
-                    <input type="checkbox" id="termsCheckbox" value="terms" />
+                    <input type="checkbox" id="termsCheckbox" value="terms" checked= "true"/>
                     <label id="terms_conditions">
                         <span>I have read and accept the </span>
                         <Link to="/terms">
@@ -123,7 +123,7 @@ function Details() {
 
                 <Link to="/complete">
                     <div class="button">
-                        <button id="nextButton" onClick={handleComplete}>
+                        <button id="continueButton" onClick={handleComplete}>
                             <span>Complete Booking</span>
                         </button>
                     </div>

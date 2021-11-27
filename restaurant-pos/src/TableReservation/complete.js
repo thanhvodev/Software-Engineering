@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CancleRes from "./cancleRes";
 
 function myFunction() {
-    setTimeout(showPage, 3000);
+    setTimeout(showPage, 2000);
 }
 
 function showPage() {
@@ -55,7 +55,7 @@ function Complete() {
                     </div>
                 </Link>
                 <div className="button">
-                    <button id="backHomeButton" onClick={CancleRes}>
+                    <button id="cancelButton" onClick={CancleRes}>
                         <span>Cancel</span>
                     </button>
                 </div>
