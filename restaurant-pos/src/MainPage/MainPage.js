@@ -32,8 +32,8 @@ function MainPage() {
                 <div className="row">
                     <div className="upperbody">
                         <div className="container-fluid">
-                            <div className="header row">
-                                {username_from_local ? <p id="Backtohome">Hello</p> : <></>}
+                            <div className="header row d-flex justify-content-end">
+                                <div className="col-6"></div>
                                 {!username_from_local ? (
                                     <Link to="/register" className="btn btn-3 col-1">
                                         <h5>Register</h5>
