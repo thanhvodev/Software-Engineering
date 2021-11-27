@@ -3,18 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom"
 import { Link, useLocation } from "react-router-dom";
 
+//Nut thanh toan
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
-
-const deleteAllCookies = () => {
-    var cookies = document.cookie.split(";");
-
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    }
-}
 
 function PayPal() {
     let location = useLocation();
@@ -35,10 +25,11 @@ function PayPal() {
         });
     };
 
+    //Pay now =>
     const onApprove = (data, actions) => {
-        deleteAllCookies();
         return actions.order.capture();
     };
+    // 
     const onCancel = () => {
         alert("Canceled");
     };
@@ -55,6 +46,15 @@ function PayPal() {
                     onCancel={() => onCancel()}
                     onError={(err) => onError(err)}
                 />
+            </div>
+            <div>
+                <Link to={
+                    {
+                        pathname: '/',
+                    }
+                } >
+                    <button>Home</button>
+                </Link>
             </div>
         </div>
     );
