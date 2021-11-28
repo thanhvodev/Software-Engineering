@@ -38,6 +38,19 @@ function disableTime(reservateTime, dateObj) {
     }
 }
 
+function enableTime(reservateTime) {
+    let tempAllTime = [];
+    for (let i = 0; i < 3; i++) {
+        tempAllTime = tempAllTime.concat(reservateTime[i].options);
+    }
+    let numTime = tempAllTime.length;
+    for (let i = 0; i < numTime; i++) {
+        if (tempAllTime[i].isDisabled) {
+            tempAllTime[i].isDisabled = false;
+        }
+    }
+}
+
 function parseDate(str, format, locale) {
     const parsed = dateFnsParse(str, format, new Date(), { locale });
     if (DateUtils.isDate(parsed)) {
@@ -96,12 +109,17 @@ const reservateTime = [
     },
 ];
 
+const dateObj = new Date();
+//pre-disable time
+disableTime(reservateTime, dateObj);
+
 function handleDayChange(selectedDay, modifiers, dayPickerInput) {
     const input = dayPickerInput.getInput();
-    const dateObj = new Date();
     var tempDate = dateFnsFormat(dateObj, FORMAT_DAY);
     if (tempDate == input.value) {
         disableTime(reservateTime, dateObj);
+    } else {
+        enableTime(reservateTime);
     }
 }
 
