@@ -11,8 +11,7 @@ import firebase from "firebase";
 import dateFnsFormat from "date-fns/format";
 import dateFnsParse from "date-fns/parse";
 
-function disableTime(reservateTime) {
-    const dateObj = new Date();
+function disableTime(reservateTime, dateObj) {
     let currentHour = dateObj.getHours();
     let currentMinute = dateObj.getMinutes();
 
@@ -30,11 +29,9 @@ function disableTime(reservateTime) {
         } else if (hour == currentHour) {
             tempAllTime[i].isDisabled = true;
             if (currentMinute <= 30) {
-                //return tempAllTime[i + 2].value;
                 break;
             } else {
                 tempAllTime[i + 1].isDisabled = true;
-                //return tempAllTime[i + 3].value;
                 break;
             }
         }
@@ -99,7 +96,14 @@ const reservateTime = [
     },
 ];
 
-disableTime(reservateTime);
+function handleDayChange(selectedDay, modifiers, dayPickerInput) {
+    const input = dayPickerInput.getInput();
+    const dateObj = new Date();
+    var tempDate = dateFnsFormat(dateObj, FORMAT_DAY);
+    if (tempDate == input.value) {
+        disableTime(reservateTime, dateObj);
+    }
+}
 
 function TableRes() {
     /* ________________________________________________________________________________ */
@@ -174,6 +178,7 @@ function TableRes() {
                         format={FORMAT_DAY}
                         parseDate={parseDate}
                         value={`${dateFnsFormat(new Date(), FORMAT_DAY)}`}
+                        onDayChange = {handleDayChange}
                         dayPickerProps={{
                             disabledDays: { before: new Date() },
                         }}
