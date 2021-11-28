@@ -11,4 +11,24 @@
     background-color: lightgray;
     padding: 100px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    place-items: center;
+}
+
+button {
+    color: blue;
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 16px;
+}
+
+button:hover {
+    background-color: yellow;
 }

@@ -59,6 +59,13 @@ function PayPal() {
                     onCancel={() => onCancel()}
                     onError={(err) => onError(err)}
                 />
+                <Link to={
+                    {
+                        pathname: '/',
+                    }
+                } >
+                    <button onClick={deleteAllCookies()}>PAY BY CASH</button>
+                </Link>
             </div>
             <div>
                 <Link to={
@@ -66,7 +73,7 @@ function PayPal() {
                         pathname: '/',
                     }
                 } >
-                    <button>Home</button>
+                    <button className="backHome">Home</button>
                 </Link>
             </div>
         </div>
