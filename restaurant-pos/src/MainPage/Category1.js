@@ -80,56 +80,56 @@ function Category1() {
                                 id="1.9"
                                 srcImg={coca}
                                 stt="9."
-                                name="CoCa-Cola"
+                                name="CoCa-Cola 2"
                                 price="15.000 VND"
                             />
                             <FoodComponent
                                 id="1.10"
                                 srcImg={cocazero}
                                 stt="10."
-                                name="CoCa-Cola Zero"
+                                name="CoCa-Cola Zero 2"
                                 price="15.000 VND"
                             />
                             <FoodComponent
                                 id="1.11"
                                 srcImg={fanta}
                                 stt="11."
-                                name="Fanta"
+                                name="Fanta 2"
                                 price="15.000 VND"
                             />
                             <FoodComponent
                                 id="1.12"
                                 srcImg={mirinda}
                                 stt="12."
-                                name="Mirinda"
+                                name="Mirinda 2"
                                 price="15.000 VND"
                             />
                             <FoodComponent
                                 id="1.13"
                                 srcImg={moutaindew}
                                 stt="13."
-                                name="Moutaindew"
+                                name="Moutaindew 2"
                                 price="15.000 VND"
                             />
                             <FoodComponent
                                 id="1.14"
                                 srcImg={pepsi}
                                 stt="14."
-                                name="Pepsi"
+                                name="Pepsi 2"
                                 price="15.000 VND"
                             />
                             <FoodComponent
                                 id="1.15"
                                 srcImg={redbull}
                                 stt="15."
-                                name="Redbull"
-                                price="15.000 VND"
+                                name="Redbull 2"
+                                price="15.000 VND 2"
                             />
                             <FoodComponent
                                 id="1.16"
                                 srcImg={sprite}
                                 stt="16."
-                                name="Sprite"
+                                name="Sprite 2"
                                 price="15.000 VND"
                             />
                         </div>

@@ -25,37 +25,7 @@ html {
     text-decoration: underline;
     box-shadow: 3px 3px 5px gray;
     color: rgb(74, 131, 74);
-}
-
-#Backtohome {
-    display: flex;
-    margin-top: 0px;
-    padding-left: 10px;
-    background-color: rgb(255, 255, 255);
-    width: 30vw;
-}
-
-#Backtohome #home {
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    cursor: pointer;
-}
-
-#Backtohome #home:hover {
-    box-shadow: 3px 3px 5px gray;
-}
-
-#Backtohome p {
-    font-size: 20px;
-    font-weight: bold;
     background-color: white;
-    margin-left: 5px;
-    padding-top: 12px;
-    cursor: pointer;
-}
-
-#Backtohome p:hover {
-    text-decoration-line: underline;
 }
 
 .Navigation {
@@ -200,6 +170,16 @@ html {
     position: fixed;
     width: 30%;
     top: 0px;
-    left: 0px;
+    right: 0px;
     z-index: 1;
+    animation: gr ease-in 0.2s;
+}
+
+@keyframes gr {
+    from {
+        right: -30%;
+    }
+    to {
+        right: 0;
+    }
 }

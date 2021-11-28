@@ -21,7 +21,7 @@ function Complete() {
     function handleCancle() {
         if (window.confirm("Are you sure that you cancle the reservation?")) {
             CancleRes();
-            alert("Cancle Reservation Success!");
+            alert("Cancel Reservation Success!");
         }
     }
 

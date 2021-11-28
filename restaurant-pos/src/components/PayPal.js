@@ -1,7 +1,8 @@
-import './PayPal.css';
+import "./PayPal.css";
 import React from "react";
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom";
 import { Link, useLocation } from "react-router-dom";
+import home from "../img/home.png";
 
 //Nut thanh toan
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
@@ -34,7 +35,7 @@ function PayPal() {
             var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
             document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
         }
-    }
+    };
 
     //Pay now =>
     const onApprove = (data, actions) => {
@@ -42,7 +43,7 @@ function PayPal() {
         alert("Bạn đã thanh toán thành công!");
         return actions.order.capture();
     };
-    // 
+    //
     const onCancel = () => {
         alert("Canceled");
     };
@@ -53,31 +54,34 @@ function PayPal() {
     return (
         <div className="paypal">
             <div className="wrapper">
+                <Link
+                    to={{
+                        pathname: "/",
+                    }}
+                >
+                    <div id="Backtohome">
+                        <img id="home" src={home} alt="Home Icon" width="50px" height="50px" />
+                    </div>
+                </Link>
                 <PayPalButton
                     createOrder={(data, actions) => createOrder(data, actions)}
                     onApprove={(data, actions) => onApprove(data, actions)}
                     onCancel={() => onCancel()}
                     onError={(err) => onError(err)}
                 />
-                <Link to={
-                    {
-                        pathname: '/',
-                    }
-                } >
-                    <button onClick={deleteAllCookies()}>PAY BY CASH</button>
-                </Link>
-            </div>
-            <div>
-                <Link to={
-                    {
-                        pathname: '/',
-                    }
-                } >
-                    <button className="backHome">Home</button>
+                OR
+                <Link
+                    to={{
+                        pathname: "/",
+                    }}
+                >
+                    <button id="paybycash" onClick={deleteAllCookies()}>
+                        PAY BY CASH
+                    </button>
                 </Link>
             </div>
         </div>
     );
 }
 
-export default PayPal
+export default PayPal;

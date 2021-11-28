@@ -3,3 +3,10 @@
     height: 0vh;
     background-image: url("../img/background.jpg");
 }
+
+.register .btn-3 {
+    position: absolute;
+    z-index: 1;
+    left: 175px;
+    color: white;
+}

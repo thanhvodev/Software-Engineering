@@ -128,7 +128,7 @@ body::-webkit-scrollbar {
 }
 
 .tableInfo .DayPickerInput {
-    width: 100%;    
+    width: 100%;
     height: 44.8px;
     margin-bottom: 10px;
 }
@@ -168,7 +168,6 @@ body::-webkit-scrollbar {
     border-color: black;
     box-shadow: 0 5px 35px 0px rgba(128, 0, 0, 0.2);
 }
-
 
 .tableInfo #reservatePartySize:hover,
 .DayPickerInput input:hover {
@@ -222,7 +221,7 @@ body::-webkit-scrollbar {
 #firstName:hover,
 #mobileNumber:hover,
 #email:hover,
-#comment:hover {    
+#comment:hover {
     border: 2px solid rgba(128, 0, 0, 1);
     box-shadow: 0 5px 35px 0px rgba(128, 0, 0, 0.5);
 }
@@ -276,7 +275,7 @@ body::-webkit-scrollbar {
     top: 0;
 }
 
-.button #backHomeButton span:after {    
+.button #backHomeButton span:after {
     font-size: 1.2vw;
     content: "\2302";
     position: absolute;

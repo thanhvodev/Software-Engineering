@@ -18,6 +18,17 @@
     place-items: center;
 }
 
+#paybycash {
+    background: #ffc439;
+    width: 200px;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 5px;
+    font-weight: 500;
+    font-style: italic;
+}
+
 button {
     color: blue;
     background-color: white;
@@ -31,4 +42,26 @@ button {
 
 button:hover {
     background-color: yellow;
+}
+
+#Backtohome {
+    display: flex;
+    margin-top: 0px;
+    padding-left: 10px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#Backtohome #home {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: -90px;
+    right: -180px;
+}
+
+#Backtohome #home:hover {
+    box-shadow: 3px 3px 5px gray;
 }

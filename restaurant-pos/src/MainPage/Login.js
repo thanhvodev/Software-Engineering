@@ -84,10 +84,6 @@ function Login(props) {
                             ></input>
                         </div>
                         <div class="remember">
-                            <label id="checkbox">
-                                {" "}
-                                <input type="checkbox"></input> Remember me
-                            </label>
                             <Link to="/forgotpass">
                                 <a>Forgot password?</a>
                             </Link>
