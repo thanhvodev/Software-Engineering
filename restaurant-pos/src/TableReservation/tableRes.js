@@ -136,6 +136,7 @@ function TableRes() {
 
     const Reservation = (e) => {
         const userd = firebase.database().ref("Accounts").child(id);
+
         var date = document.getElementsByClassName("DayPickerInput").item(0)
             .firstElementChild.value;
         var time = document.getElementsByClassName("css-qc6sy-singleValue").item(0).textContent;
@@ -196,7 +197,7 @@ function TableRes() {
                         format={FORMAT_DAY}
                         parseDate={parseDate}
                         value={`${dateFnsFormat(new Date(), FORMAT_DAY)}`}
-                        onDayChange = {handleDayChange}
+                        onDayChange={handleDayChange}
                         dayPickerProps={{
                             disabledDays: { before: new Date() },
                         }}

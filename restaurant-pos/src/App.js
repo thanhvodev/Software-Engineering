@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import MainPage from "./MainPage/MainPage";
 import Login from "./MainPage/Login";
+import ForgotPass from "./MainPage/ForgotPass";
 import Register from "./MainPage/register";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Category1 from "./MainPage/Category1";
@@ -17,7 +18,6 @@ import Profile from "./MainPage/Profile";
 import PayPal from "./components/PayPal";
 
 function App() {
-
     const [user, setUser] = useState(null);
     const value = useMemo(() => ({ user, setUser }), [user, setUser]);
     return (
@@ -27,6 +27,7 @@ function App() {
                     <UserContext.Provider value={value}>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={Login} />
+                        <Route path="/forgotpass" exact component={ForgotPass} />
                         <Route path="/register" exact component={Register} />
                         <Route path="/category1" exact component={Category1} />
                         <Route path="/category2" exact component={Category2} />

@@ -1,11 +1,11 @@
-.Loginpage {
+.ForgotPass {
     width: 100vw;
     height: 100vh;
     display: flex;
     background: url("../img/background.jpg") no-repeat center fixed;
 }
 
-.Loginpage .loginbox {
+.ForgotPass .forgotbox {
     width: auto;
     height: auto;
     min-width: 50%;
@@ -18,21 +18,21 @@
     -webkit-border-radius: 10px;
 }
 
-.Loginpage #welcome {
+.ForgotPass #welcome {
     font-size: 2rem;
     font-weight: bold;
     margin: auto;
     margin-top: 3%;
-    width: 11%;
+    width: 31%;
 }
 
-.Loginpage #cancelContainer {
+.ForgotPass #cancelContainer {
     position: absolute;
     top: 5px;
     right: 10px;
 }
 
-.Loginpage .inp {
+.ForgotPass .inp {
     display: block;
     background-color: white;
     color: #474a59;
@@ -46,7 +46,7 @@
     margin: 40px 30px 10px 30px;
 }
 
-.Loginpage .inp .impBx {
+.ForgotPass .inp .impBx {
     border: none;
     width: 75%;
     margin-left: 20px;
@@ -54,36 +54,24 @@
     outline: none;
 }
 
-.Loginpage .remember {
-    margin-left: 530px;
+.ForgotPass .remember {
+    margin-left: 20px;
     padding: 20px;
-    justify-content: space-between;
     font-size: 1.3rem;
 }
 
-.Loginpage .btn-box {
+.ForgotPass .btn-box {
     display: block;
-    margin: 10px auto 10px 32%;
+    margin: 10px auto 10px 37%;
 }
 
-.Loginpage .toggle-btn1 {
+.ForgotPass .toggle-btn1 {
     padding: 10px 30px;
     cursor: pointer;
     background: #fc6b57;
     border: solid #fc6b57;
     border-radius: 10px;
     outline: none;
-    margin-right: 60px;
     color: white;
-    font-weight: bold;
-}
-.Loginpage .toggle-btn2 {
-    padding: 10px 30px;
-    cursor: pointer;
-    background: white;
-    border: solid #fc6b57;
-    border-radius: 10px;
-    outline: none;
-    color: #fc6b57;
     font-weight: bold;
 }
